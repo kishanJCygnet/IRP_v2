@@ -26,7 +26,7 @@ define( 'DB_NAME', 'irp_v2' );
 define( 'DB_USER', 'root' ); 
 
 /** Database password */
-define( 'DB_PASSWORD', '' );
+define( 'DB_PASSWORD', '' ); 
 
 /** Database hostname */
 define( 'DB_HOST', 'localhost' );
