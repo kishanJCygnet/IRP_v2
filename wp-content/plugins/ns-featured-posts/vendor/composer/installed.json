@@ -1,0 +1,101 @@
+{
+    "packages": [
+        {
+            "name": "ernilambar/optioner",
+            "version": "2.0.7",
+            "version_normalized": "2.0.7.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/ernilambar/optioner.git",
+                "reference": "e16e6a5245e220224c08a4942c60f1b7353a5e4d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/ernilambar/optioner/zipball/e16e6a5245e220224c08a4942c60f1b7353a5e4d",
+                "reference": "e16e6a5245e220224c08a4942c60f1b7353a5e4d",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.6"
+            },
+            "time": "2022-09-29T05:32:49+00:00",
+            "type": "library",
+            "installation-source": "dist",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Nilambar Sharma",
+                    "email": "nilambar@outlook.com",
+                    "homepage": "https://www.nilambar.net",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Minimal option framework for WordPress plugins",
+            "homepage": "https://github.com/ernilambar/optioner",
+            "keywords": [
+                "option",
+                "wordpress"
+            ],
+            "support": {
+                "issues": "https://github.com/ernilambar/optioner/issues",
+                "source": "https://github.com/ernilambar/optioner/tree/2.0.7"
+            },
+            "install-path": "../ernilambar/optioner"
+        },
+        {
+            "name": "ernilambar/wp-admin-notice",
+            "version": "1.0.0",
+            "version_normalized": "1.0.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/ernilambar/wp-admin-notice.git",
+                "reference": "1fd14ff6d79994750d25b4f529284a6942e117eb"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/ernilambar/wp-admin-notice/zipball/1fd14ff6d79994750d25b4f529284a6942e117eb",
+                "reference": "1fd14ff6d79994750d25b4f529284a6942e117eb",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.6"
+            },
+            "time": "2022-06-27T07:08:52+00:00",
+            "type": "library",
+            "installation-source": "dist",
+            "autoload": {
+                "psr-4": {
+                    "Nilambar\\AdminNotice\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Nilambar Sharma",
+                    "email": "nilambar@outlook.com",
+                    "homepage": "https://www.nilambar.net/"
+                }
+            ],
+            "description": "WordPress Helper for showing admin notice",
+            "homepage": "https://github.com/ernilambar/wp-admin-notice",
+            "keywords": [
+                "admin",
+                "notice",
+                "wordpress"
+            ],
+            "support": {
+                "issues": "https://github.com/ernilambar/wp-admin-notice/issues/",
+                "source": "https://github.com/ernilambar/wp-admin-notice/tree/1.0.0"
+            },
+            "install-path": "../ernilambar/wp-admin-notice"
+        }
+    ],
+    "dev": false,
+    "dev-package-names": []
+}

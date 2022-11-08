@@ -1,0 +1,194 @@
+.upcoming-webinars,
+.webinar-registration, .webinar-recordings-table  {
+    table-layout: fixed;
+    width: 100%;
+}
+
+.upcoming-webinars th,
+.upcoming-webinars td,.webinar-recordings-table th,
+.webinar-recordings-table td {
+    vertical-align: top;
+}
+
+@media only screen and (min-width: 601px) {
+    .upcoming-webinars .large-column {
+        width: 50%;
+    }
+    .upcoming-webinars .large-column-product {
+        width: 37.5%;
+    }
+    .upcoming-webinars .small-column {
+        width: 12.5%;
+    }
+    .webinar-registration .large-column {
+        width: 70%;
+    }
+    .webinar-registration .small-column {
+        width: 30%;
+    }
+
+    .large-column-recordings {
+        width: 60%;
+    }
+    .small-column-recordings {
+        width: 20%;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .upcoming-webinars td,
+    .webinar-registration td, .webinar-recordings-table td {
+        width: 100%;
+        display: block;
+    }
+    .upcoming-webinars .large-column,
+    .webinar-registration .large-column, .upcoming-webinars .large-column-product, .large-column-recordings, .small-column-recordings {
+        width: 100%;
+        display: block;
+    }
+    .upcoming-webinars .small-column,
+    .webinar-registration .small-column {
+        width: 100%;
+        display: block;
+    }
+    .upcoming-webinars th, .webinar-recordings-table th {
+        display: none;
+    }
+    .upcoming-webinars tr,.webinar-recordings-table tr {
+        border-bottom: 3px solid black;
+        display: block;
+    }
+    
+}
+
+.tooltip-gtw {
+    display: none;
+    position: absolute;
+    border-style: solid;
+    border-width: 2px;
+    border-radius: 5px;
+    padding: 4px 11px;
+    z-index: 9999;
+}
+
+.webinar-registration input[type="submit"] {
+    border-style: solid;
+    border-width: 2px;
+}
+
+.upcoming-webinars i,
+.upcoming-webinars a,
+.upcoming-webinars-widget i,
+.upcoming-webinars-widget a, .webinar-recordings-table a {
+    text-decoration: none !important;
+    box-shadow: none !important;
+}
+
+.upcoming-webinars-widget span,
+.webinar-registration-header span {
+    padding-right: 12px;
+    display: inline-block;
+}
+
+.upcoming-webinars-widget i,
+.webinar-registration-header i {
+    padding-right: 3px;
+}
+
+#date-time-duration-details {
+    padding-bottom: 10px;
+}
+
+.webinar-registration {
+    margin-top: 40px;
+}
+
+.webinar-registration .gotowebinar-required:after {
+    content: "*";
+    font-size: x-small;
+    color: darkred;
+    vertical-align: top;
+}
+
+.webinar-registration .gotowebinar-field,
+.webinar-registration .gotowebinar-question {
+    width: 100%;
+    border-radius: 0px;
+    height: 40px;
+}
+
+label.error {
+    color: darkred;
+    margin-top: 3px;
+    display: block;
+}
+
+.webinar-registration-header span {
+    display: inline-block;
+}
+
+.webinar-registration .success-message,
+.webinar-registration .error-message {
+    display: block;
+    margin-top: 10px;
+    word-wrap: break-word;
+}
+
+
+@keyframes spinner {
+    to {transform: rotate(360deg);}
+}
+   
+.webinar-registration .fa-spinner:before {
+    content: '';
+    box-sizing: border-box;
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    margin-top: 10px;
+    margin-left: 10px;
+    border-radius: 50%;
+    border: 4px solid transparent;
+    border-top-color: black;
+    border-bottom-color: black;
+    animation: spinner .8s ease infinite;
+}
+
+.webinar-registration .fa-spinner {
+    display: none;
+}
+
+.upcoming-webinars-widget {
+    margin-bottom: 24px;
+}
+
+a.information-icon, .timezone-convert-link, .timezone-convert-link-registration {
+    cursor: pointer;
+}
+
+#timezone-answer {
+    display: inline-block;
+}
+
+.webinar-checkout-heading {
+margin-top: 2.4347826087em !important;
+}
+
+.fc-scroller.fc-day-grid-container {
+    overflow-x: visible !important;
+    overflow-y: visible !important;
+}
+
+.fc-row:first-child table {
+    margin-bottom: 0px !important;
+}
+
+
+
+
+
+
+
+
+
+

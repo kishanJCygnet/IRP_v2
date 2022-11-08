@@ -1,0 +1,278 @@
+// ************************** Contact Form **************************
+
+.contact-form {
+    z-index: 1;   
+    position: relative;
+    // background-image: url(./images/shape.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    .section-shape {
+        z-index: -1;
+    }
+    &.shape-section {
+        .section-shape {
+            bottom: calc(100% - 1px);
+            svg {
+                background-color: #fff;
+            }
+        }
+    }
+    .form-content {       
+        width: 900px;
+        margin: auto;
+        max-width: 100%;
+    }
+    .form-control,
+    .form-select{
+        border: 1px solid #b9b9b9;
+    }
+    .form-control,
+    .form-select,
+    .wpcf7-radio {
+      
+       border-radius: 30px;
+       margin-bottom: 35px;
+       height: 56px;
+       padding: 15px 30px;
+
+       &:focus{
+        outline: 0;
+       }
+    
+    }
+    .wpcf7-radio {
+        display: inline-block;
+        padding-left: 0;
+       margin-bottom: 15px;
+    }
+    textarea.form-control {
+        height: auto;
+    }
+    .wpcf7-form-control-wrap {
+        display: inline-block;
+        width: 100%;
+    }
+    br {
+        display: none;
+    }
+}
+.contact-form-content {
+    background-color: #F3FBFF;
+}
+.wpcf7-not-valid-tip {
+    position: absolute;
+    left: 27px;
+    right: 0;
+    width: 100%;
+    display: inline-block;
+    bottom: 11px;
+    font-size: 13px !important;
+}
+.wpcf7-form-control-wrap.profession-type {
+    .wpcf7-not-valid-tip {
+        bottom: 0px;
+    }
+}
+
+.form-check-input[type="checkbox"] {
+    border-color: #969;
+}
+.form-check-input:checked {
+    background-color: #969;
+}
+.form-check-label,
+.form-select {
+    color: rgba(61, 61, 61, 0.8);
+}
+.form-control::-webkit-input-placeholder {
+    /* Edge */
+    color: rgba(61, 61, 61, 0.8);
+}
+
+.form-control:-ms-input-placeholder {
+    /* Internet Explorer 10-11 */
+    color: rgba(61, 61, 61, 0.8);
+}
+
+.form-control::placeholder {
+    color: rgba(61, 61, 61, 0.8);
+}
+
+select:required:invalid {
+    color: rgba(61, 61, 61, 0.8);
+}
+option {
+    color: rgb(61, 61, 61);
+}
+
+// .green-btn {
+//     background-color: #8fc069;
+//     :hover {
+//         background-color: #8fc069;
+//         opacity: 0.8;
+//         color: #fff;
+//     }
+// }
+.overlay {
+    @include positionOverlay;
+    background-color: rgb(0 0 0 / 37%);
+}
+.form-content .form-check .form-check-input[type="checkbox"] {
+    border-color: #0c3761;
+    width: 27px;
+    height: 27px;
+    min-width: 27px;
+    min-height: 27px;
+    border-radius: 5px;
+}
+.form-content {
+    .form-check {
+        label {
+            font-weight: normal;
+            margin-bottom: 0;
+            font-size: 18px;
+            & > span {
+                 padding-left: 40px;
+                display: inline-block;
+            }
+        }
+        &.terms-condition-check {
+             margin-top: 40px;
+             .t_and_c_acceptedDate{
+             .wpcf7-not-valid-tip{
+                @include bp(sm-max){
+                bottom: 4px;
+                }
+             }
+            }
+        }
+        &.whatup-check {
+            margin: 0px 0 0px;
+            line-height: 1.3;
+            &:first-child {
+                margin-top: 0;
+            }
+            &:last-child {
+                margin-top: 30px;
+                margin-bottom: 0;
+                .contact-form-content &{
+                    @include bp(sm-max){
+                      margin-top: 0;
+                    }
+                }
+            }
+            .wpcf7-list-item {
+                margin-left: 0;
+            }
+        }
+        .wpcf7-not-valid-tip {
+            position: absolute;
+            left: 9px;
+            right: 0;
+            width: 100%;
+            display: inline-block;
+            bottom: -13px;
+
+            @include bp(lg-max) {
+                left: 0 !important;
+                padding-left: 10px;
+            }
+            @include bp(md-max) {
+                bottom: -28px;
+            }
+        }
+        .form-check-input {
+            width: 100%;
+            background-color: transparent;
+            border: 0;
+            float: none;
+            input {
+                position: absolute;
+                width: 23px;
+                height: 23px;
+                border-radius: 5px;       
+                border: 1px solid #bdb8b8;
+          }
+        }
+    }
+   
+}
+.whatup-check{
+    position: relative;
+}
+.whatup-check > span:last-child{
+    position: absolute;
+    left: 0;
+    right: 0;
+    font-size: 17px;
+    color: #333;
+    left: 40px;
+    top:3px;
+    @include bp(md-max){
+        font-size: 14px; 
+        line-height: 1.5;
+    }
+}
+.contact-form-content .whatup-check > span:last-child{
+    color:#414042;
+}
+.whatup-check > span:last-child a{
+    color: #00a0d2;
+}
+.whatup-check > span:last-child a:hover{
+    color: #0C3761;
+}
+.whatup-check .wpcf7-list-item-label{
+opacity: 0;
+}
+input[type=checkbox]:checked:after {
+    border: 3px solid #3cb4e7;
+    border-top: 0;
+    border-left: 0;
+    left: 7px;
+}
+.wpcf7 form .wpcf7-response-output {
+    margin: .6em 0.5em 0em !important;
+    padding: 0.2em 1em;
+    border: 2px solid #00a0d2;
+    font-size: 14px !important;
+}
+.submit-button{
+    span{
+        position: absolute;
+        right: 0;
+        top: 0px;
+    }
+    input[type='submit']{
+        margin-top: 50px;
+    }
+}
+.sidebar{
+.submit-button{
+    position: relative;
+    span{
+        position: absolute;
+        right: 0;
+        top: 0px;
+    }
+    input[type='submit']{
+        margin-top: 0px;
+    }
+    .contact-form-content &{
+        span{
+            
+                position: absolute;
+                right: 0;
+                top: 60px;
+                left: 55%;
+
+        }
+    }
+}
+
+}
+.signupform .whatup-check .wpcf7-not-valid-tip{
+   bottom: -25px;
+}
+
+// *************************  End Contact Form *********************

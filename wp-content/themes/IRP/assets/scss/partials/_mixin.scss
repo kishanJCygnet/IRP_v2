@@ -1,0 +1,148 @@
+//Tranform
+@mixin transform($transforms) {
+    -moz-transform: translate($transforms);
+    -o-transform: translate($transforms);
+    -ms-transform: translate($transforms);
+    -webkit-transform: translate($transforms);
+    transform: translate($transforms);
+}
+
+//Transition
+@mixin transformrotate($rotate) {
+    -moz-transform: rotate($rotate);
+    -o-transform: rotate($rotate);
+    -ms-transform: rotate($rotate);
+    -webkit-transform: rotate($rotate);
+    transform: rotate($rotate);
+}
+
+@mixin transformY($transforms) {
+    -moz-transform: translateY($transforms);
+    -o-transform: translateY($transforms);
+    -ms-transform: translateY($transforms);
+    -webkit-transform: translateY($transforms);
+    transform: translateY($transforms);
+}
+
+@mixin transformX($transforms) {
+    -moz-transform: translateX($transforms);
+    -o-transform: translateX($transforms);
+    -ms-transform: translateX($transforms);
+    -webkit-transform: translateX($transforms);
+    transform: translateX($transforms);
+}
+@mixin transformZ($transforms) {
+    -moz-transform: translateZ($transforms);
+    -o-transform: translateZ($transforms);
+    -ms-transform: translateZ($transforms);
+    -webkit-transform: translateZ($transforms);
+    transform: translateZ($transforms);
+}
+@mixin scale($transforms) {
+    -moz-transform: scale($transforms);
+    -o-transform: scale($transforms);
+    -ms-transform: scale($transforms);
+    -webkit-transform: scale($transforms);
+    transform: scale($transforms);
+}
+@mixin transition($transition) {
+    transition: $transition;
+    -o-transition: $transition;
+    -ms-transition: $transition;
+    -webkit-transition: $transition;
+    transition: $transition;
+}
+
+@mixin float($float) {
+    float:$float;
+}
+
+//placeholder
+@mixin placeholder {
+    &.placeholder { @content; }
+    &:-moz-placeholder { @content; }
+    &::-moz-placeholder { @content; }
+    &::-webkit-input-placeholder { @content; }
+}
+
+//Border Radius
+@mixin border-radius($radius) {
+    border-top-right-radius: $radius;
+    border-top-left-radius: $radius;
+    border-bottom-left-radius: $radius;
+    border-bottom-right-radius: $radius;
+}
+@mixin positionOverlay {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+  }
+
+// @function strip-unit($num) {
+//     @return $num / 10;
+// }
+
+// @mixin rem-fallback($property, $values...) {
+//     $max: length($values);
+//     $pxValues: '';
+//     $remValues: '';
+
+//     @for $i from 1 through $max {
+//         $value: strip-unit(nth($values, $i));
+//         $pxValues: #{$pxValues + $value*16}px;
+
+//         @if $i < $max {
+//             $pxValues: #{$pxValues + " "};
+//         }
+//     } 
+
+//     @for $i from 1 through $max {
+//         $value: strip-unit(nth($values, $i));
+//         $remValues: #{$remValues + $value}rem;
+
+//         @if $i < $max {
+//             $remValues: #{$remValues + " "};
+//         }
+//     } 
+
+//     //#{$property}: $pxValues; 
+//     #{$property}: $remValues; 
+// }
+
+//Breakpoints function
+@mixin bp($point) {
+    $xxs-max: "(max-width: 375px)";
+    $sxxs-max: "(max-width: 480px)";
+    $xs-max: "(max-width: 576px)";
+    $sm-max: "(max-width: 768px)";
+    $md-max: "(max-width: 991px)";   
+    $lg-max: "(max-width: 1200px)";    
+    $xl-max: "(max-width: 1400px)";
+
+    
+    @if $point == xxs-max {
+        @media #{$xxs-max} { @content; }
+    }
+    @if $point == sxxs-max {
+        @media #{$sxxs-max} { @content; }
+    }
+    @if $point == xs-max {
+        @media #{$xs-max} { @content; }
+    }
+    @else if $point == sm-max {
+        @media #{$sm-max} { @content; }
+    } 
+    @else if $point == md-max {
+        @media #{$md-max}  { @content; }
+    }
+    @else if $point == lg-max {
+        @media #{$lg-max}  { @content; }    }
+  
+    @else if $point == xl-max {
+        @media #{$xl-max}  { @content; }
+    }
+
+
+}

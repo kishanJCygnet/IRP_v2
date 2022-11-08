@@ -1,0 +1,522 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: WP GoToWebinar\n"
+"POT-Creation-Date: 2018-11-06 10:50+1100\n"
+"PO-Revision-Date: 2021-02-17 10:49+0100\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: pl_PL\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<12 "
+"|| n%100>14) ? 1 : 2);\n"
+"X-Generator: Poedit 2.4.2\n"
+"X-Poedit-Basepath: ../..\n"
+"X-Poedit-WPHeader: wp-gotowebinar.php\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
+"_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.js\n"
+
+#: inc/options-output.php:442
+msgid ""
+"To connect your website to your GoToWebiner account we provide 2 ways to "
+"connect. The easiest way is to just press the below \"Click here to connect "
+"with GoToWebinar\" button. However this is a shared application which means "
+"it is subject to API rate limits. To have a more consistent connection we "
+"recommend creating an application in GoToWebinar - it does take more effort "
+"but it will be more consistent connection. To do this please go to: <a "
+"target=\"_blank\" href=\"https://goto-developer.logmeininc.com/\">https://"
+"goto-developer.logmeininc.com/</a> and click \"My Apps\" and sign in with "
+"your GoToWebinar details and then click the \"Add a new App\" button. Call "
+"your application whatever you want and give it any description you would "
+"like and then select \"GoToWebinar\" as the Product API. For the redirect "
+"URL please enter: <code>"
+msgstr ""
+"Aby połączyć Twoją stronę internetową z kontem GoToWebiner, udostępniamy 2 "
+"sposoby połączenia. Najprostszym sposobem jest naciśnięcie poniższego "
+"przycisku \"Kliknij tutaj, aby połączyć się z GoToWebinar\". Jest to jednak "
+"aplikacja współdzielona, co oznacza, że podlega limitom stawek API. W celu "
+"uzyskania bardziej spójnego połączenia zalecamy utworzenie aplikacji w "
+"GoToWebinar - wymaga to więcej wysiłku, ale będzie to bardziej spójne "
+"połączenie. W tym celu należy wejść na stronę: <a target=\"_blank\" href="
+"\"https://goto-developer.logmeininc.com/\">https://goto-developer.logmeininc."
+"com/</a>, kliknąć \"My Apps\", zalogować się za pomocą danych GoToWebinar a "
+"następnie kliknąć przycisk \"Add a new App\". Nazwij swoją aplikację wedle "
+"uznania i dodaj jej dowolny opis, a następnie wybierz \"GoToWebinar\" jako "
+"API produktu. Aby uzyskać przekierowujący adres URL, wprowadź: <code>"
+
+#: inc/options-output.php:736
+msgid "Free Support"
+msgstr "Bezpłatna pomoc techniczna"
+
+#: inc/options-output.php:788 inc/pro/options-output-pro.php:637
+msgid "Connection Log"
+msgstr "Dziennik połączeń"
+
+#: inc/options-output.php:833
+msgid "Please upgrade to PRO to use this feature"
+msgstr "Prosimy o aktualizację do wersji PRO, aby móc korzystać z tej funkcji"
+
+#: inc/options-page-wrapper.php:51
+msgid "WP GoToWebinar Pro Options"
+msgstr "Opcje WP GoToWebinar Pro"
+
+#: inc/options-page-wrapper.php:53
+msgid "WP GoToWebinar Options"
+msgstr "Opcje WP GoToWebinar"
+
+#: inc/options-page-wrapper.php:153
+msgid "Save All Settings"
+msgstr "Zapisz wszystkie ustawienia"
+
+#: inc/pro/options-output-pro.php:529
+msgid "Webinar Performance"
+msgstr "Wydajność webinaru"
+
+#: inc/pro/options-output-pro.php:559
+msgid "Data Overview"
+msgstr "Przegląd danych"
+
+#: inc/pro/options-output-pro.php:564
+msgid "Percentage Attendance"
+msgstr "Procentowa frekwencja"
+
+#: inc/pro/options-output-pro.php:567
+msgid "Registrants and Attendees Comparison"
+msgstr "Porównanie rejestrujących się i uczestników"
+
+#: inc/pro/options-output-pro.php:570
+msgid "Average Interest Rating"
+msgstr "Średnia stopa zainteresowania"
+
+#: inc/pro/options-output-pro.php:573
+msgid "Average Attendance Time"
+msgstr "Średni czas obecności"
+
+#: inc/pro/options-output-pro.php:576
+msgid "Average Attentiveness"
+msgstr "Średnia uważność"
+
+#: inc/pro/options-output-pro.php:579
+msgid "Table Data"
+msgstr "Dane tabelaryczne"
+
+#: inc/pro/options-output-pro.php:594
+msgid "Pro Support"
+msgstr "Wsparcie Pro"
+
+#: inc/pro/plugin-update-checker/Puc/v4p4/Plugin/UpdateChecker.php:395
+msgid "Check for updates"
+msgstr "Sprawdź aktualizacje"
+
+#: inc/pro/plugin-update-checker/Puc/v4p4/Plugin/UpdateChecker.php:432
+msgid "View details"
+msgstr "Pokaż szczegóły"
+
+#: inc/pro/plugin-update-checker/Puc/v4p4/Plugin/UpdateChecker.php:455
+#, php-format
+msgid "More information about %s"
+msgstr "Więcej informacji o %s"
+
+#: inc/pro/plugin-update-checker/Puc/v4p4/Plugin/UpdateChecker.php:548
+#, php-format
+msgctxt "the plugin title"
+msgid "The %s plugin is up to date."
+msgstr "Wtyczka %s jest aktualna."
+
+#: inc/pro/plugin-update-checker/Puc/v4p4/Plugin/UpdateChecker.php:550
+#, php-format
+msgctxt "the plugin title"
+msgid "A new version of the %s plugin is available."
+msgstr "Nowa wersja wtyczki %s jest dostępna."
+
+#: inc/pro/plugin-update-checker/Puc/v4p4/Plugin/UpdateChecker.php:552
+#, php-format
+msgctxt "the plugin title"
+msgid "Could not determine if updates are available for %s."
+msgstr "Nie można ustalić, czy są dostępne aktualizacje dla %s."
+
+#: inc/pro/plugin-update-checker/Puc/v4p4/Plugin/UpdateChecker.php:558
+#, php-format
+msgid "Unknown update checker status \"%s\""
+msgstr "Nieznany stan sprawdzania aktualizacji \"%s\""
+
+#: inc/pro/plugin-update-checker/Puc/v4p4/Vcs/PluginUpdateChecker.php:98
+msgid "There is no changelog available."
+msgstr "Dziennik zmian jest niedostępny."
+
+#: inc/pro/pro.php:1064
+msgid "Webinar Selection (Upcoming)"
+msgstr "Wybór webinarów (nadchodzące)"
+
+#: inc/pro/pro.php:1071
+msgid "Webinar Selection (Recording)"
+msgstr "Wybór webinariów (nagrania)"
+
+#: inc/pro/pro.php:1165
+msgid "Webinar recording selection"
+msgstr "Wybór nagrania z webinaru"
+
+#: inc/pro/pro.php:1219
+msgid "Please select a webinar"
+msgstr "Proszę wybrać webinar"
+
+#: inc/pro/pro.php:1220
+msgid "Date is represented as YYYY-MM-DD"
+msgstr "Data jest podana jako RRRRR-MM-DD"
+
+#: inc/pro/pro.php:1237
+msgid ""
+"To sell a recording of a previously recorded webinar(s) please follow the "
+"following steps:"
+msgstr ""
+"Aby sprzedać nagranie z wcześniej zarejestrowanego webinaru(ów), należy "
+"wykonać następujące kroki:"
+
+#: inc/pro/pro.php:1239
+msgid ""
+"Make the product \"Downloadable\" by checking the checkbox at the top of "
+"this options panel"
+msgstr ""
+"Spraw, aby produkt był \"Do pobrania\" poprzez zaznaczenie pola wyboru w "
+"górnej części tego panelu opcji"
+
+#: inc/pro/pro.php:1240
+msgid ""
+"Go to the \"General\" tab in this options panel and at the bottom for the "
+"field \"Webinar recording selection\" select your webinar recording"
+msgstr ""
+"Przejdź do zakładki \"Ogólne\" w tym panelu opcji, a na dole pola \"Wybór "
+"nagrania webinaru\" wybierz nagranie webinaru"
+
+#: inc/pro/pro.php:1241
+msgid "Update/Publish the product as per normal"
+msgstr "Aktualizuj/Publikuj produkt jak zwykle"
+
+#: inc/pro/pro.php:1244
+msgid ""
+"Please note, recordings are not automatically recorded and must be uploaded "
+"to GoToWebinar <a target=\"_blank\" href=\"https://global.gotowebinar.com/"
+"recordings.tmpl\">here</a>."
+msgstr ""
+"Należy pamiętać, że nagrania nie są nagrywane automatycznie i muszą być "
+"przesłane do GoToWebinar <a target=\"_blank\" href=\"https://global."
+"gotowebinar.com/recordings.tmpl\">tutaj</a>."
+
+#: inc/pro/pro.php:1310
+msgid "Copy from Billing Details"
+msgstr "Kopia z danych rozliczeniowych"
+
+#: inc/pro/pro.php:1345
+msgid "Attendee"
+msgstr "Uczestnik"
+
+#: inc/pro/pro.php:1345
+msgid " - "
+msgstr " - "
+
+#: inc/pro/pro.php:1702 inc/pro/pro.php:1735
+msgid "This webinar registration field is required."
+msgstr "To pole rejestracji na webinarium jest wymagane."
+
+#: inc/pro/pro.php:2194 inc/pro/pro.php:2769 inc/shortcode-registration.php:167
+#: inc/shortcode.php:130
+msgid "minutes"
+msgstr "minut"
+
+#: inc/pro/pro.php:2196 inc/pro/pro.php:2771 inc/shortcode-registration.php:169
+#: inc/shortcode.php:132
+msgid "hour"
+msgstr "godzina"
+
+#: inc/pro/pro.php:2198 inc/pro/pro.php:2775 inc/shortcode-registration.php:172
+#: inc/shortcode.php:136
+msgid "hours"
+msgstr "godzin"
+
+#: inc/pro/pro.php:2630 inc/shortcode-registration.php:179 inc/shortcode.php:26
+msgid "Convert to my timezone"
+msgstr "Pokaż w mojej strefie czasowej"
+
+#: inc/pro/pro.php:2649
+#, fuzzy
+msgid "Webinar Product"
+msgstr "Produkt webinar"
+
+#: inc/pro/pro.php:2650 inc/shortcode.php:45
+msgid "Date"
+msgstr "Data"
+
+#: inc/pro/pro.php:2651 inc/shortcode.php:46
+msgid "Start Time"
+msgstr "Czas rozpoczęcia"
+
+#: inc/pro/pro.php:2652 inc/shortcode.php:47
+msgid "Duration"
+msgstr "Czas trwania"
+
+#: inc/pro/pro.php:2653
+msgid "Price"
+msgstr "Cena"
+
+#: inc/pro/pro.php:2654 inc/pro/pro.php:2795
+msgid "Purchase"
+msgstr "Kup"
+
+#: inc/pro/pro.php:2850
+msgid "Recording name"
+msgstr "Nazwa nagrania"
+
+#: inc/pro/pro.php:2851
+msgid "Created Date"
+msgstr "Data utworzenia"
+
+#: inc/pro/pro.php:2852 inc/pro/pro.php:2901
+msgid "Download"
+msgstr "Obejrzyj"
+
+#: inc/shortcode.php:44
+msgid "Title"
+msgstr "Tytuł"
+
+#: inc/shortcode.php:48 inc/shortcode.php:146 inc/widget-output.php:54
+msgid "Register"
+msgstr "Zarejestruj się"
+
+#: inc/visual-composer.php:24
+msgid "WP GoToWebinar - Upcoming Webinars"
+msgstr "WP GoToWebinar - Nadchodzące webinaria"
+
+#: inc/visual-composer.php:28 inc/visual-composer.php:103
+#: inc/visual-composer.php:162 inc/visual-composer.php:443
+#: inc/visual-composer.php:541
+msgid "Content"
+msgstr "Treść"
+
+#: inc/visual-composer.php:33 inc/visual-composer.php:108
+msgid ""
+"Include webinars that contain the following word or phrase in the title:"
+msgstr ""
+"Załączyć webinaria, które zawierają w tytule następujące słowo lub wyrażenie:"
+
+#: inc/visual-composer.php:40 inc/visual-composer.php:115
+msgid ""
+"Exclude webinars that contain the following word or phrase in the title:"
+msgstr ""
+"Z wyłączeniem webinarów, które w tytule zawierają następujące słowo lub "
+"wyrażenie:"
+
+#: inc/visual-composer.php:47 inc/visual-composer.php:122
+#: inc/visual-composer.php:456 inc/visual-composer.php:554
+msgid "Hide the following word or phrase from the webinar title:"
+msgstr "Ukryj poniższe słowo lub wyrażenie w tytule webinaru:"
+
+#: inc/visual-composer.php:54 inc/visual-composer.php:129
+msgid "Show webinars from the following amount of days:"
+msgstr "Pokaż webinaria z następującej ilości dni:"
+
+#: inc/visual-composer.php:57 inc/visual-composer.php:132
+msgid "If left blank all upcoming webinars will be shown."
+msgstr ""
+"Jeśli pozostawisz puste miejsce, zostaną wyświetlone wszystkie nadchodzące "
+"webinaria."
+
+#: inc/visual-composer.php:62 inc/visual-composer.php:137
+msgid "Show webinars from only this timezone:"
+msgstr "Pokaż webinaria tylko z tej strefy czasowej:"
+
+#: inc/visual-composer.php:66 inc/visual-composer.php:141
+#: inc/visual-composer.php:481 inc/visual-composer.php:579
+msgid "If left blank all timezones will be shown."
+msgstr ""
+"Jeśli pozostawisz puste miejsce, zostaną wyświetlone wszystkie strefy "
+"czasowe."
+
+#: inc/visual-composer.php:99
+msgid "WP GoToWebinar - Calendar"
+msgstr "WP GoToWebinar - Kalendarz"
+
+#: inc/visual-composer.php:158
+msgid "WP GoToWebinar - Registration"
+msgstr "WP GoToWebinar - Rejestracja"
+
+#: inc/visual-composer.php:439 inc/visual-composer.php:537
+msgid "WP GoToWebinar - Single Registration Form"
+msgstr "WP GoToWebinar - Pojedynczy formularz rejestracyjny"
+
+#: inc/visual-composer.php:448 inc/visual-composer.php:546
+msgid "The webinar key of the webinar you want to show a registration form of:"
+msgstr "Klucz webinaru, który chcesz pokazać w formularzu rejestracyjnym:"
+
+#: inc/visual-composer.php:451 inc/visual-composer.php:549
+msgid ""
+"If you want to show a registration form for your next webinar you can just "
+"type in <code><strong>upcoming</strong></code>. You can get your webinar key "
+"from the GoToWebinar website. We have also included a quick reference below:"
+msgstr ""
+"Jeśli chcesz pokazać formularz rejestracyjny na następne webinarium, możesz "
+"po prostu wpisać <code><strong>upcoming</strong></code>. Klucz do webinaru "
+"można pobrać ze strony internetowej GoToWebinar. Poniżej zamieściliśmy "
+"również krótką referencję:"
+
+#: inc/visual-composer.php:463 inc/visual-composer.php:561
+msgid ""
+"If you have entered to show the registration form for the most upcoming "
+"webinar optionally enter a value here to only show the most upcoming webinar "
+"if the webinar subject includes:"
+msgstr ""
+"Jeśli wprowadziłeś opcję wyświetlania formularza rejestracji na najbliższy "
+"webinar, opcjonalnie wpisz tutaj wartość, aby pokazać najbliższy webinar "
+"tylko wtedy, gdy temat webinaru obejmuje:"
+
+#: inc/visual-composer.php:470 inc/visual-composer.php:568
+msgid ""
+"If you have entered to show the registration form for the most upcoming "
+"webinar optionally enter a value here to only show the most upcoming webinar "
+"if the webinar subject excludes:"
+msgstr ""
+"Jeśli wprowadziłeś opcję wyświetlania formularza rejestracji na najbliższy "
+"webinar, opcjonalnie wpisz tutaj wartość, aby pokazać najbliższy webinar "
+"tylko wtedy, gdy temat webinaru jest wyłączony:"
+
+#: inc/visual-composer.php:477 inc/visual-composer.php:575
+msgid ""
+"If you have entered to show the registration form for the most upcoming "
+"webinar optionally enter a value here to only show the most upcoming webinar "
+"if the webinar timezone is:"
+msgstr ""
+"Jeśli wprowadziłeś opcję wyświetlania formularza rejestracji na najbliższy "
+"webinar, opcjonalnie wpisz tutaj wartość, aby pokazać najbliższy webinar "
+"tylko wtedy, gdy strefa czasowa webinaru to:"
+
+#: inc/visual-composer.php:487
+msgid "Custom MailChimp List ID (Optional):"
+msgstr "Własny MailChimp List ID (opcjonalny):"
+
+#: inc/visual-composer.php:491
+msgid ""
+"By default we will use the list selected in the WP GoToWebinar Pro settings. "
+"However you can over-ride this selection by entering in a custom list ID "
+"above. Please use the below table to see your existing MailChimp List IDs:"
+msgstr ""
+"Domyślnie używamy listy wybranej w ustawieniach WP GoToWebinar Pro. Można "
+"jednak nadpisać ten wybór, wprowadzając własny identyfikator listy powyżej. "
+"Proszę użyć poniższej tabeli aby zobaczyć istniejące MailChimp List ID:"
+
+#: inc/visual-composer.php:497
+msgid "Custom Constant Contact List ID (Optional):"
+msgstr "Własny Constant Contact List ID (opcjonalnie):"
+
+#: inc/visual-composer.php:501
+msgid ""
+"By default we will use the list selected in the WP GoToWebinar Pro settings. "
+"However you can over-ride this selection by entering in a custom list ID "
+"above. Please use the below table to see your existing Constant Contact List "
+"IDs:"
+msgstr ""
+"Domyślnie używamy listy wybranej w ustawieniach WP GoToWebinar Pro. Można "
+"jednak nadpisać ten wybór, wprowadzając własny identyfikator listy powyżej. "
+"Proszę użyć poniższej tabeli, aby zobaczyć istniejące Constant Contact List "
+"ID:"
+
+#: inc/visual-composer.php:507
+msgid "Custom Campaign Monitor List ID (Optional):"
+msgstr "Własny Campaign Monitor List ID (opcjonalnie):"
+
+#: inc/visual-composer.php:511
+msgid ""
+"By default we will use the list selected in the WP GoToWebinar Pro settings. "
+"However you can over-ride this selection by entering in a custom list ID "
+"above. Please use the below table to see your existing Campaign Monitor List "
+"IDs:"
+msgstr ""
+"Domyślnie używamy listy wybranej w ustawieniach WP GoToWebinar Pro. Można "
+"jednak nadpisać ten wybór, wprowadzając własny identyfikator listy powyżej. "
+"Proszę użyć poniższej tabeli, aby zobaczyć istniejące Campaign Monitor ID:"
+
+#: inc/visual-composer.php:517
+msgid "Active Campaign List ID (Optional):"
+msgstr "Aktywny Campaign List ID (opcjonalnie):"
+
+#: inc/visual-composer.php:521
+msgid ""
+"By default we will use the list selected in the WP GoToWebinar Pro settings. "
+"However you can over-ride this selection by entering in a custom list ID "
+"above. Please use the below table to see your existing ActiveCampaign List "
+"IDs:"
+msgstr ""
+"Domyślnie używamy listy wybranej w ustawieniach WP GoToWebinar Pro. Można "
+"jednak nadpisać ten wybór, wprowadzając własny identyfikator listy powyżej. "
+"Proszę użyć poniższej tabeli, aby zobaczyć istniejące ActiveCampaign List ID:"
+
+#: inc/visual-composer.php:527
+msgid "AWeber List ID (Optional):"
+msgstr "AWeber List ID (opcjonalnie):"
+
+#: inc/visual-composer.php:531
+msgid ""
+"By default we will use the list selected in the WP GoToWebinar Pro settings. "
+"However you can over-ride this selection by entering in a custom list ID "
+"above. Please use the below table to see your existing AWeber List IDs:"
+msgstr ""
+"Domyślnie używamy listy wybranej w ustawieniach WP GoToWebinar Pro. Można "
+"jednak nadpisać ten wybór, wprowadzając własny identyfikator listy powyżej. "
+"Proszę użyć poniższej tabeli, aby zobaczyć swoje istniejące AWeber List ID:"
+
+#: wp-gotowebinar.php:58
+msgid "Settings"
+msgstr "Ustawienia"
+
+#: wp-gotowebinar.php:69
+msgid "Donate"
+msgstr "Wesprzyj"
+
+#: wp-gotowebinar.php:70
+msgid "Pro Version"
+msgstr "Wersja Pro"
+
+#: wp-gotowebinar.php:71
+msgid "Support Forum"
+msgstr "Forum wsparcia"
+
+#: wp-gotowebinar.php:1694
+msgid ""
+"IMPORTANT INFORMATION ABOUT THE WP GOTOWEBINAR PLUGIN UPDATE - PLEASE READ!"
+msgstr "WAŻNE INFORMACJE O AKTUALIZACJI WTYCZKI WP GOTOWEBINAR - CZYTAJ!"
+
+#: wp-gotowebinar.php:1696
+msgid ""
+"Thanks for updating WP GoToWebinar. Due to the GoToWebinar API upgrade the "
+"authentication process for this plugin has needed to be re-written. It is "
+"critical that you now reauthenticate the plugin immidiately by going to the "
+"<a href=\""
+msgstr ""
+"Dziękuję za aktualizację WP GoToWebinar. Ze względu na aktualizację API "
+"GoToWebinar, proces uwierzytelniania dla tego pluginu musiał zostać ponownie "
+"napisany. Bardzo ważne jest, aby natychmiast ponownie uwierzytelnić wtyczkę, "
+"przechodząc do <a href=\""
+
+#. Plugin Name of the plugin/theme
+msgid "WP GoToWebinar"
+msgstr "WP GoToWebinar"
+
+#. Plugin URI of the plugin/theme
+#. Author URI of the plugin/theme
+msgid "https://www.northernbeacheswebsites.com.au"
+msgstr "https://www.northernbeacheswebsites.com.au"
+
+#. Description of the plugin/theme
+msgid ""
+"Show upcoming GoToWebinars on any post or page or in a widget and register "
+"users on your website."
+msgstr ""
+"Pokazuj nadchodzące GoToWebinary na dowolnym wpisie lub stronie lub w "
+"widżecie i rejestruj uczestników bezpośrednio ze swojej strony internetowej."
+
+#. Author of the plugin/theme
+msgid "Martin Gibson"
+msgstr "Martin Gibson"
