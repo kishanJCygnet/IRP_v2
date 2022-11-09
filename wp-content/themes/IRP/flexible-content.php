@@ -2,56 +2,53 @@
 	<?php
 	/* banner content */
 		if (have_rows('banner')) : ?>
-			<section class="banner-content <?php echo the_field('banner_class'); ?>" <?php if ( is_front_page() ) : ?> id="particles-js" <?php endif; ?>>
-				<?php if(get_field('banner_content')){ ?><div><?php echo the_field('banner_content'); ?> </div> <?php } ?>
-				<?php if(get_field('banner_top_title')){ ?><h1><?php echo the_field('banner_top_title'); ?> </h1> <?php } ?>
-				<span class="bottom-arrow"></span>  
+			<section class="banner-content <?php echo the_field('banner_class'); ?>">  
 				<div <?php if ( is_front_page() ) : ?> class="owl-carousel banner-slider" <?php endif; ?> >
-				<!--<div class="owl-carousel banner-slider" >-->
 					<?php while (have_rows('banner')) : the_row(); ?>
 						<div class="banner-inner-content w-100" style="background-image:url('<?php echo the_sub_field('background_image'); ?>')">  
-							<div class="container">
-								 <div class="row" >
-									<div class="col-lg-7">
-										<div class="d-flex align-items-center h-100">
-											<div class="text-content ">
-												<?php if (get_sub_field('title')) :  ?>
-													<?php echo the_sub_field('title'); ?>
-												<?php endif; ?>
-												<?php /*if (get_sub_field('sub_title')) :  ?>
-													<h3 class="text-white wow fadeInUp" data-wow-delay="0.6s"><?php echo the_sub_field('sub_title'); ?></h3>
-												<?php endif; ?>
-												<?php if (get_sub_field('title')) :  ?>
-													<h1 class="wow fadeInUp" data-wow-delay="0.3s"><?php echo the_sub_field('title'); ?></h1>
-												<?php endif; ?>
-												<?php if (get_sub_field('sub_sub_title')) :  ?>
-													<h4 class="text-white wow fadeInUp" data-wow-delay="0.6s"><?php echo the_sub_field('sub_sub_title'); ?></h4>
-												<?php endif; ?>										
-												<?php if (get_sub_field('primary_button_url') && get_sub_field('primary_button_label')) : ?>
-													<a href="<?php echo the_sub_field('primary_button_url'); ?>" class="btn me-3 wow fadeInUp " data-wow-delay="0.9s"><span class="text"><?php echo the_sub_field('primary_button_label'); ?></span><span class="effect"></span></a>
-												<?php endif; ?>
-												<?php if (get_sub_field('secondary_button_url') && get_sub_field('secondary_button_label')) : ?>
-													<a href="<?php echo the_sub_field('secondary_button_url'); ?>" class="btn wow fadeInUp btn-white " data-wow-delay="0.9s"><span class="text"><?php echo the_sub_field('secondary_button_label'); ?></span><span class="effect"></span></a>
-												<?php endif; */?>
-											</div>
+							<div class="container-fluid">
+							 <div class="row" >
+								<div class="col-lg-7">
+									<div class="d-flex align-items-center h-100">
+										<div class="text-content ">
+											<?php if (get_sub_field('title')) :  ?>
+												<h1 class="wow fadeInUp" data-wow-delay="0.3s"><?php echo the_sub_field('title'); ?></h1>
+											<?php endif; ?>
+											<?php if (get_sub_field('sub_title')) :  ?>
+												<h3 class="text-white wow fadeInUp" data-wow-delay="0.6s"><?php echo the_sub_field('sub_title'); ?></h3>
+											<?php endif; ?>	
+											<?php if (get_sub_field('banner_content')) :  ?>
+												<p class="text-white wow fadeInUp" data-wow-delay="0.9s"><?php echo the_sub_field('banner_content'); ?></p>
+											<?php endif; ?>										
+											<?php if (get_sub_field('primary_button_url') && get_sub_field('primary_button_label') && !is_front_page()) : ?>
+												<a href="<?php echo the_sub_field('primary_button_url'); ?>" class="btn me-3 wow fadeInUp btn-white " data-wow-delay="0.9s"><span class="text"><?php echo the_sub_field('primary_button_label'); ?></span><span class="effect"></span></a>
+											<?php endif; ?>
+											<?php if (get_sub_field('secondary_button_url') && get_sub_field('secondary_button_label')) : ?>
+												<a href="<?php echo the_sub_field('secondary_button_url'); ?>" class="btn wow fadeInUp btn-white " data-wow-delay="0.9s"><span class="text"><?php echo the_sub_field('secondary_button_label'); ?></span><span class="effect"></span></a>
+											<?php endif; ?>
 										</div>
 									</div>
-									<!--<div class="col-lg-5 d-md-none d-none d-lg-block">
-										<div class="img-content">
-										<?php if(get_sub_field('video_url')){ 
-											?>
-											<video class="banner-video animate__animated wow fadeIn " data-wow-duration="3s" data-wow-delay="1s" loop="true" autoplay="autoplay" muted/> 										  
-												<source src="<?php echo the_sub_field('video_url'); ?>" type="video/mp4"> 
-											</video>
-											<?php
-										} else {
-											if (get_sub_field('image')) :
-												?><img src="<?php echo the_sub_field('image'); ?>" class="w-100 wow fadeIn" data-wow-duration="3s" data-wow-delay="1s" alt="<?php echo the_sub_field('title'); ?>"><?php
-											endif;
-										} ?>
-										</div>
-									</div>-->
 								</div>
+								<div class="col-lg-5 d-md-none d-none d-lg-block">
+									<div class="img-content">
+									<?php if(get_sub_field('video_url')){ 
+										?>
+										<!--<iframe class="banner-video" src="<?php echo the_sub_field('video_url'); ?>?autoplay=1&amp;modestbranding=1&amp;showinfo=0" allowfullscreen="allowfullscreen"></iframe>-->
+										<video class="banner-video animate__animated wow fadeIn " data-wow-duration="3s" data-wow-delay="1s" loop="true" autoplay="autoplay" muted/> 										  
+											<source src="<?php echo the_sub_field('video_url'); ?>" type="video/mp4"> 
+										</video>
+										<?php
+									} else {
+										if (get_sub_field('image')) :
+											?><img src="<?php echo the_sub_field('image'); ?>" class="w-100 wow fadeIn" data-wow-duration="3s" data-wow-delay="1s" alt="<?php echo the_sub_field('title'); ?>"><?php
+										endif;
+									} ?>
+									<?php /* if (get_sub_field('image')) : ?>
+										<img src="<?php echo the_sub_field('image'); ?>" class="w-100" alt="<?php echo the_sub_field('title'); ?>">
+									<?php endif; */ ?>
+									</div>
+								</div>
+							</div>
 							</div>
 						</div>    
 					<?php endwhile;	?> 
@@ -69,53 +66,6 @@
 					});
 				});
 				</script>
-				<!-- Start count section -->				
-				<?php if (have_rows('count_section')) :  ?>
-					<div class="count-section-main <?php echo the_field('count_section_class'); ?>">
-						<?php if (get_field('count_section_title')){ ?>
-							<div class="count-section-title">
-								<h2 class="wow fadeInUp" data-wow-delay="0.9s"><?php echo the_field('count_section_title'); ?></h2>
-							</div>
-						<?php } ?>
-						<div class="count-section-main-inner">
-							<?php $cnt=1;
-							while (have_rows('count_section')) : the_row(); 
-								if($cnt < 7){ ?>
-								<div class="count-inner">
-									<?php if (get_sub_field('count_section_icon_image')){ 
-											$extension = pathinfo(get_sub_field('count_section_icon_image'), PATHINFO_EXTENSION);
-											if($extension == 'svg'){
-												$count_section_icon_image = get_sub_field('count_section_icon_image');
-												$stream_opts = [
-													"ssl" => [
-														"verify_peer"=>false,
-														"verify_peer_name"=>false,
-													]
-												];														 
-												echo file_get_contents($count_section_icon_image, false, stream_context_create($stream_opts));
-											} else { ?>
-												<img src="<?php echo the_sub_field('count_section_icon_image'); ?>" alt="<?php echo the_sub_field('count_section_label'); ?>">
-										<?php } ?>										
-										
-									<?php } ?>
-									<?php if (get_sub_field('count_section_value')){ ?>
-										<div class="count-label">
-											<span class="counter" data-count="<?php echo the_sub_field('count_section_value');?>">0</span><span><?php echo the_sub_field('count_section_value_symbol');?></span>
-										</div>
-									<?php } ?>
-									<?php if (get_sub_field('count_section_label')){ ?>
-										<div class="count-value">
-											<h2><?php echo the_sub_field('count_section_label'); ?></h2>
-										</div>
-									<?php } ?>
-								</div>
-								<?php }
-								$cnt++;
-							endwhile;	?> 
-						</div>
-					</div>
-				<?php endif; ?>
-				<!-- End count section -->
 			</section>
 		<?php endif;
 	/* End banner content */	
