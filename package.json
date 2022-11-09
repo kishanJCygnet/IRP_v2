@@ -8,14 +8,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/kishanJCygnet/Cygnetdes.git"
+    "url": "git+https://github.com/kishanJCygnet/IRP_v2.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/kishanJCygnet/Cygnetdes/issues"
+    "url": "https://github.com/kishanJCygnet/IRP_v2/issues"
   },
-  "homepage": "https://github.com/kishanJCygnet/Cygnetdes#readme",
+  "homepage": "https://github.com/kishanJCygnet/IRP_v2#readme",
   "devDependencies": {
     "gulp": "^4.0.2",
     "gulp-autoprefixer": "^6.1.0",
