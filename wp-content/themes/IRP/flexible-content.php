@@ -3,7 +3,8 @@
 	/* banner content */
 		if (have_rows('banner')) : ?>
 			<section class="banner-content <?php echo the_field('banner_class'); ?>">  
-				<div <?php if ( is_front_page() ) : ?> class="owl-carousel banner-slider" <?php endif; ?> >
+				<!--<div <?php if ( is_front_page() ) : ?> class="owl-carousel banner-slider" <?php endif; ?> >-->
+				<div>
 					<?php while (have_rows('banner')) : the_row(); ?>
 						<div class="banner-inner-content w-100" style="background-image:url('<?php echo the_sub_field('background_image'); ?>')">  
 							<div class="container-fluid">
@@ -53,7 +54,7 @@
 						</div>    
 					<?php endwhile;	?> 
 				</div>
-				<script>
+				<!--<script>
 				jQuery(document).ready(function() {
 					jQuery('.banner-slider').length && jQuery('.banner-slider').owlCarousel({
 						loop: true,
@@ -65,7 +66,7 @@
 						autoplayTimeout: 7500,
 					});
 				});
-				</script>
+				</script>-->
 			</section>
 		<?php endif;
 	/* End banner content */	
