@@ -852,6 +852,7 @@ class Email_Subscribers_Admin {
 				'show_new_keyword_notice',
 				'show_membership_integration_notice',
 				'show_email_sending_failed_notice',
+				'ig_es_show_feature_survey',
 			);
 		}
 

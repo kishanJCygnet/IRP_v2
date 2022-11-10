@@ -762,7 +762,7 @@ if ( ! class_exists( 'ES_Campaign_Admin' ) ) {
 																	jQuery('#ig-es-dnd-add-merge-tag-button').click(function () {
 																		jQuery('#ig-es-dnd-merge-tags-wrapper #ig-es-dnd-tags-dropdown').toggle();
 																	});
-
+																	ig_es_add_dnd_rte_color_picker();
 																	ig_es_add_dnd_rte_tags( '<?php echo esc_js( $campaign_type ); ?>' );
 															});
 														});

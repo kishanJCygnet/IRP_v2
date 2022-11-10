@@ -3935,6 +3935,24 @@ function ig_es_is_valid_email( email ) {
 
 window.ig_es_is_valid_json = ig_es_is_valid_json;
 
+function ig_es_add_dnd_rte_color_picker() {
+	window.esVisualEditor.RichTextEditor.add('fontcolor',{
+		icon: `<input type="color" id="ig-es-color-picker" value="#000000" style="cursor: pointer;"/>`,
+		event: 'change',
+		attributes: { title: 'Text color' },
+		// Bind the 'result' on 'change' listener
+		result: (rte, action) => {
+			rte.exec('forecolor',action.btn.firstChild.value);
+		},
+		// Reset the color
+		update: (rte, action) => {
+			action.btn.firstChild.value = "#000000";
+		}
+	});
+}
+
+window.ig_es_add_dnd_rte_color_picker = ig_es_add_dnd_rte_color_picker;
+
 function ig_es_add_dnd_rte_tags ( campaign_type ) {
 
 	let option_html = '';
