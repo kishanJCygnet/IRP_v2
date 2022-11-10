@@ -141,17 +141,17 @@
     &.home-banner {
         position: relative;
         h1{
-            z-index: 0;
-            position: relative;
-            color: #fff;
-            text-align: center;
-            display: inline-block;
-            width: 100%;
-            text-align: center;
-            position: absolute;
-            top: 35px;
-            left: 0;
-            right: 0;
+            // z-index: 0;
+            // position: relative;
+            // color: #fff;
+            // text-align: center;
+            // display: inline-block;
+            // width: 100%;
+            // text-align: center;
+            // position: absolute;
+            // top: 35px;
+            // left: 0;
+            // right: 0;
         }
         .banner-inner-content {
         // background-image: url('../../images/BG.jpg') !important;
@@ -204,12 +204,12 @@
                 top:40px;
             }
         }
-        .col-lg-5 {
-            display: none !important;
-        }
-        .col-lg-7{
-            width: 100% !important;
-        }
+        // .col-lg-5 {
+        //     display: none !important;
+        // }
+        // .col-lg-7{
+        //     width: 100% !important;
+        // }
         }
         .text-content {
             margin: auto;

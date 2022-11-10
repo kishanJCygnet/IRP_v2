@@ -30,7 +30,7 @@
 										</div>
 									</div>
 								</div>
-								<div class="col-lg-5 d-md-none d-none d-lg-block">
+								<div class="col-lg-5 d-md-none d-lg-block">
 									<div class="img-content">
 									<?php if(get_sub_field('video_url')){ 
 										?>
