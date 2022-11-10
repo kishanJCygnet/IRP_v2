@@ -67,6 +67,49 @@ class ES_Common {
 		return $total_emails_sent;
 	}
 
+	/**
+	 * Process the email template and get variable fallbacks
+	 *
+	 * @param $template
+	 */
+	public static function get_template_fallbacks( $template ) {
+		preg_match_all( '/{{(.*?)}}/', $template, $matches );
+		$default_keywords = array();
+		if ( 1 < count( $matches ) ) {
+			$fallback_matches = $matches[1];
+			foreach ( $fallback_matches as $keyword ) {
+				if ( strstr( $keyword, '|' ) ) {
+					list( $variable_name, $variable_params ) = explode( '|', $keyword, 2 );
+				} else {
+					$variable_name   = $keyword;
+					$variable_params = '';
+				}
+				$variable_name = trim( $variable_name );
+				$variable      = new IG_ES_Workflow_Variable_Parser();
+				$parameters    = $variable->parse_parameters_from_string( trim( $variable_params ) );
+				if ( is_array( $parameters ) && ! empty( $parameters ) ) {
+					if ( isset( $parameters['fallback'] ) && ! empty( $parameters['fallback'] ) ) {
+						$replace_with_fallback = self::un_quote( $parameters['fallback'] );
+						$is_nested_variable    = strpos( $variable_name, '.' ); // Check if variable has dont(.) in its name
+						if ( $is_nested_variable ) {
+							$variable_parts = explode( '.', $variable_name );
+							$variable_type  = $variable_parts[0];
+							$variable_slug  = $variable_parts[1];
+							/**
+							 * For variables like subscribers.name, we need to pass the fallback data as nested array
+							 * $default_keywords['subscribers']['name'] = fallback_value
+							 **/ 
+							$default_keywords[ $variable_type ][ $variable_slug ] = $replace_with_fallback;
+						} else {
+							$default_keywords[ $variable_name ] = $replace_with_fallback;
+						}
+					}
+				}
+			}
+		}
+		return $default_keywords;
+	}
+
 
 	/**
 	 * Callback to replace keywords
@@ -2791,9 +2834,9 @@ class ES_Common {
 	public static function download_image_from_url( $image_url ) {
 
 		$attachment_url = '';
-		$upload_dir = wp_upload_dir();
-		$image_data = file_get_contents( $image_url );
-		$filename   = basename( $image_url );
+		$upload_dir     = wp_upload_dir();
+		$image_data     = file_get_contents( $image_url );
+		$filename       = basename( $image_url );
 		if ( wp_mkdir_p( $upload_dir['path'] ) ) {
 			$file = $upload_dir['path'] . '/' . $filename;
 		} else {
@@ -2809,7 +2852,7 @@ class ES_Common {
 			'post_content'   => '',
 			'post_status'    => 'inherit',
 		);
-		$attach_id = wp_insert_attachment( $attachment, $file );
+		$attach_id   = wp_insert_attachment( $attachment, $file );
 		if ( ! empty( $attach_id ) ) {
 			$attachment_url = wp_get_attachment_url( $attach_id );
 		}
