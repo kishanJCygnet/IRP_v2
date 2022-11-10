@@ -90,7 +90,7 @@ class ES_Drag_And_Drop_Editor {
 		
 		$current_page = ig_es_get_request_data( 'page' );
 		//Only for development - this branch only
-		//wp_register_script( 'es_editor_js', 'http://localhost:9000/main.js', array(), time(), true );
+		// wp_register_script( 'es_editor_js', 'http://localhost:9000/main.js', array(), time(), true );
 		wp_register_script( 'es_editor_js', ES_PLUGIN_URL . 'lite/admin/js/editor.js', array( ), ES_PLUGIN_VERSION, true );
 		
 		if ( 'es_forms' === $current_page ) {

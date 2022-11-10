@@ -4,9 +4,9 @@ Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_i
 Author URI: https://www.icegram.com/
 Tags: email marketing, subscription, autoresponder, post notification, welcome email
 Requires at least: 3.9
-Tested up to: 6.0.2
+Tested up to: 6.1.0
 Requires PHP: 5.6
-Stable tag: 5.4.18
+Stable tag: 5.4.19
 License: GPLv3
 License URI: http://www.gnu.org/licenses
 
@@ -310,12 +310,21 @@ Refer [here](https://www.icegram.com/documentation/es-faq/).
 
 == Upgrade Notice ==
 
-= 5.4.18 =
+= 5.4.19 =
 
-* New: Rest API support for add/delete/edit subscriber
-* Fix: Gutenberg form block issue with ClassicPress plugin
+* New: Added Text, Image, and Heading blocks for Drag-and-Drop form editor
+* New: Added inline color picker in Drag-and-Drop campaign editor 
+* Fix: Style issue for checkbox setting fields in Drag-and-Drop editor
+* Fix: Remote templates were not loading due to database collation issues on some sites
 
 == Changelog ==
+
+**5.4.19 (09.11.2022)**
+
+* New: Added Text, Image, and Heading blocks for Drag-and-Drop form editor
+* New: Added inline color picker in Drag-and-Drop campaign editor 
+* Fix: Style issue for checkbox setting fields in Drag-and-Drop editor
+* Fix: Remote templates were not loading due to database collation issues on some sites
 
 **5.4.18 (02.11.2022)**
 

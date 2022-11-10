@@ -463,7 +463,7 @@ if ( ! class_exists( 'ES_Admin' ) ) {
 																		ig_es_sync_dnd_editor_content('#campaign-dnd-editor-data');
 																	}
 																});
-																ig_es_add_dnd_rte_tags( '<?php echo esc_js( $template_type ); ?>' );
+																ig_es_add_dnd_rte_color_picker();
 															});
 														});
 													</script>
