@@ -7,7 +7,7 @@
 				<div>
 					<?php while (have_rows('banner')) : the_row(); ?>
 						<div class="banner-inner-content w-100" style="background-image:url('<?php echo the_sub_field('background_image'); ?>')">  
-							<div class="container-fluid">
+							<div class="container">
 							 <div class="row" >
 								<div class="col-lg-7">
 									<div class="d-flex align-items-center h-100">
@@ -21,7 +21,7 @@
 											<?php if (get_sub_field('banner_content')) :  ?>
 												<p class="text-white wow fadeInUp" data-wow-delay="0.9s"><?php echo the_sub_field('banner_content'); ?></p>
 											<?php endif; ?>										
-											<?php if (get_sub_field('primary_button_url') && get_sub_field('primary_button_label') && !is_front_page()) : ?>
+											<?php if (get_sub_field('primary_button_url') && get_sub_field('primary_button_label')) : ?>
 												<a href="<?php echo the_sub_field('primary_button_url'); ?>" class="btn me-3 wow fadeInUp btn-white " data-wow-delay="0.9s"><span class="text"><?php echo the_sub_field('primary_button_label'); ?></span><span class="effect"></span></a>
 											<?php endif; ?>
 											<?php if (get_sub_field('secondary_button_url') && get_sub_field('secondary_button_label')) : ?>
@@ -421,7 +421,7 @@
 						<div class="container">
 							<div class="row">
 								<div class="col-md-12">
-									<a href="<?php echo the_sub_field('contact_us'); ?>" class="btn wow fadeInUp" data-wow-offset="50" ><span class="text"><?php echo the_sub_field('cta_button_label'); ?></span><span class="effect"></span></a>
+									<a href="<?php echo the_sub_field('contact_us'); ?>" class="btn wow fadeInUp" data-wow-offset="50" ><span class="text"><?php echo the_sub_field('cta_button_label'); ?></span></a>
 								</div>
 							</div>
 						</div>
