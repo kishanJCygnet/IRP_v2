@@ -1144,6 +1144,74 @@
 			<?php  endif;  */
 			/* Text Slider section End */
 			
+			/* Tab Section With Click Start */
+			if (get_row_layout() == 'tab_section_with_click') : ?> 
+			<section class="tab-section <?php echo the_sub_field('tab_section_with_click_custom_class'); ?>">
+				<div class="container">
+					<div class="tab-section-main">
+						<div class="title-heading">
+							<?php if (get_sub_field('tab_section_with_click_title')){ ?>
+								<h2><?php echo the_sub_field('tab_section_with_click_title'); ?>
+									<span class="heading-border"></span>
+								</h2>
+							<?php } ?>
+							<?php if (get_sub_field('tab_section_with_click_sub_title')){ ?>
+								<h3><?php echo the_sub_field('tab_section_with_click_sub_title'); ?></h3>
+							<?php } ?>
+						</div>	
+						<?php if (have_rows('tab_section_with_click_content')) : ?>					
+								<ul class="nav nav-tabs" id="click-tab-section">
+								<?php $j = 0;
+									$tab_section_with_click_tab_title = '';
+									while (have_rows('tab_section_with_click_content')) : the_row();	
+									$tab_section_with_click_tab_title = preg_replace('/[^A-Za-z0-9\-]/', '', str_replace(' ', '_', get_sub_field('tab_section_with_click_tab_title')));
+									?>	
+									  <li class="nav-item">
+										<a class="nav-link <?php if($j == 0){ ?> active <?php } ?>" href="#<?php echo $tab_section_with_click_tab_title; ?>"><?php echo the_sub_field('tab_section_with_click_tab_title'); ?></a>
+									  </li>
+									<?php $j++;
+									endwhile; ?>
+								</ul>								
+								<div class="tab-content">
+								<?php $x = 0;
+									$tab_section_with_click_tab_title = '';
+									while (have_rows('tab_section_with_click_content')) : the_row();	
+									$tab_section_with_click_tab_title = preg_replace('/[^A-Za-z0-9\-]/', '', str_replace(' ', '_', get_sub_field('tab_section_with_click_tab_title')));
+									?>	
+										<div class="tab-inner-content" id="<?php echo $tab_section_with_click_tab_title; ?>">
+											<div class="in-content">
+												<div class="col-img">
+													<div class="img-content" style="background-image:url('<?php echo the_sub_field('tab_section_with_click_content_image'); ?>')">
+														<!-- <img src="" alt="<?php echo the_sub_field('title'); ?>"> -->
+													</div>
+												</div>
+												<div class="col-text">
+													<div class="text-content">									
+														<?php if (get_sub_field('tab_section_with_click_content_desc')){ ?>
+															<p><?php echo the_sub_field('tab_section_with_click_content_desc'); ?></p>
+														<?php } ?>
+													</div>
+												</div>
+											</div>
+										</div>									  
+									<?php $x++;
+									endwhile; ?>
+								</div>
+						<?php endif; ?>								
+					</div>
+				</div>
+				<script>
+				jQuery( document ).ready(function() {
+					jQuery("#click-tab-section li a").click(function(){
+						jQuery("#click-tab-section li a.active").removeClass("active"); 
+						jQuery(this).addClass("active");
+					});
+				});
+				</script>
+			</section>
+			<?php endif;  
+			/* Tab Section With Click End */
+			
 		endwhile;
 	endif; 	
 	?>
