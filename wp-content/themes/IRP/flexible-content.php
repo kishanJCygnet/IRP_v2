@@ -1160,7 +1160,7 @@
 							<?php } ?>
 						</div>	
 						<?php if (have_rows('tab_section_with_click_content')) : ?>					
-								<ul class="nav nav-tabs">
+								<ul class="nav nav-tabs" id="click-tab-section">
 								<?php $j = 0;
 									$tab_section_with_click_tab_title = '';
 									while (have_rows('tab_section_with_click_content')) : the_row();	
@@ -1193,20 +1193,21 @@
 													</div>
 												</div>
 											</div>
-										</div>
-									  <!--<div class="tab-inner-content" id="<?php echo $tab_section_with_click_tab_title; ?>">
-										<?php if (get_sub_field('tab_section_with_click_content_desc')){ ?>
-											<div class="col-md-12 col-xl-12">
-												<?php echo the_sub_field('tab_section_with_click_content_desc'); ?>
-											</div>
-										<?php } ?>
-									  </div>-->									  
+										</div>									  
 									<?php $x++;
 									endwhile; ?>
 								</div>
 						<?php endif; ?>								
 					</div>
 				</div>
+				<script>
+				jQuery( document ).ready(function() {
+					jQuery("#click-tab-section li a").click(function(){
+						jQuery("#click-tab-section li a.active").removeClass("active"); 
+						jQuery(this).addClass("active");
+					});
+				});
+				</script>
 			</section>
 			<?php endif;  
 			/* Tab Section With Click End */
