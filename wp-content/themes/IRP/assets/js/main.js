@@ -244,7 +244,7 @@ else if(scroll >= 1200) {
         scrollLeft: "-=200px"
       }, "slow");
    });
-   jQuery('.btn').append( '<span class="effect"></span>' );
+  //  jQuery('.btn').append( '<span class="effect"></span>' );
    jQuery('.btn').on('mouseenter', function(e) {
      var parentOffset = jQuery(this).offset(),
          relX = e.pageX - parentOffset.left,

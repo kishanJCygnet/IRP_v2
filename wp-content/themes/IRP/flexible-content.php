@@ -7,7 +7,7 @@
 				<div>
 					<?php while (have_rows('banner')) : the_row(); ?>
 						<div class="banner-inner-content w-100" style="background-image:url('<?php echo the_sub_field('background_image'); ?>')">  
-							<div class="container-fluid">
+							<div class="container">
 							 <div class="row" >
 								<div class="col-lg-7">
 									<div class="d-flex align-items-center h-100">
@@ -21,7 +21,7 @@
 											<?php if (get_sub_field('banner_content')) :  ?>
 												<p class="text-white wow fadeInUp" data-wow-delay="0.9s"><?php echo the_sub_field('banner_content'); ?></p>
 											<?php endif; ?>										
-											<?php if (get_sub_field('primary_button_url') && get_sub_field('primary_button_label') && !is_front_page()) : ?>
+											<?php if (get_sub_field('primary_button_url') && get_sub_field('primary_button_label')) : ?>
 												<a href="<?php echo the_sub_field('primary_button_url'); ?>" class="btn me-3 wow fadeInUp btn-white " data-wow-delay="0.9s"><span class="text"><?php echo the_sub_field('primary_button_label'); ?></span><span class="effect"></span></a>
 											<?php endif; ?>
 											<?php if (get_sub_field('secondary_button_url') && get_sub_field('secondary_button_label')) : ?>
@@ -421,7 +421,7 @@
 						<div class="container">
 							<div class="row">
 								<div class="col-md-12">
-									<a href="<?php echo the_sub_field('contact_us'); ?>" class="btn wow fadeInUp" data-wow-offset="50" ><span class="text"><?php echo the_sub_field('cta_button_label'); ?></span><span class="effect"></span></a>
+									<a href="<?php echo the_sub_field('contact_us'); ?>" class="btn wow fadeInUp" data-wow-offset="50" ><span class="text"><?php echo the_sub_field('cta_button_label'); ?></span></a>
 								</div>
 							</div>
 						</div>
@@ -1161,13 +1161,14 @@
 						</div>	
 						<?php if (have_rows('tab_section_with_click_content')) : ?>					
 								<ul class="nav nav-tabs" id="click-tab-section">
+								<div class="slider-nav"></div>
 								<?php $j = 0;
 									$tab_section_with_click_tab_title = '';
 									while (have_rows('tab_section_with_click_content')) : the_row();	
 									$tab_section_with_click_tab_title = preg_replace('/[^A-Za-z0-9\-]/', '', str_replace(' ', '_', get_sub_field('tab_section_with_click_tab_title')));
 									?>	
-									  <li class="nav-item">
-										<a class="nav-link <?php if($j == 0){ ?> active <?php } ?>" href="#<?php echo $tab_section_with_click_tab_title; ?>"><?php echo the_sub_field('tab_section_with_click_tab_title'); ?></a>
+									  <li class="nav-item <?php if($j == 0){ ?> active <?php } ?>">
+										<a class="nav-link" href="#<?php echo $tab_section_with_click_tab_title; ?>"><?php echo the_sub_field('tab_section_with_click_tab_title'); ?></a>
 									  </li>
 									<?php $j++;
 									endwhile; ?>
@@ -1181,9 +1182,9 @@
 										<div class="tab-inner-content" id="<?php echo $tab_section_with_click_tab_title; ?>">
 											<div class="in-content">
 												<div class="col-img">
-													<div class="img-content" style="background-image:url('<?php echo the_sub_field('tab_section_with_click_content_image'); ?>')">
-														<!-- <img src="" alt="<?php echo the_sub_field('title'); ?>"> -->
-													</div>
+													<!-- <div class="img-content" style="background-image:url('<?php echo the_sub_field('tab_section_with_click_content_image'); ?>')"> -->
+														<img src="<?php echo the_sub_field('tab_section_with_click_content_image'); ?>" alt="<?php echo the_sub_field('title'); ?>">
+													<!-- </div> -->
 												</div>
 												<div class="col-text">
 													<div class="text-content">									
@@ -1203,10 +1204,45 @@
 				<script>
 				jQuery( document ).ready(function() {
 					jQuery("#click-tab-section li a").click(function(){
-						jQuery("#click-tab-section li a.active").removeClass("active"); 
-						jQuery(this).addClass("active");
+						jQuery('#click-tab-section li').removeClass("active"); 
+						jQuery(this).parent('li').addClass("active");
+					});
+					jQuery("#click-tab-section li a").click(function() {
+					var position = jQuery(this).parent('li').position();
+					var width = jQuery(this).parent('li').width();
+						jQuery("#click-tab-section .slider-nav").css({"left":+ position.left,"width":width});
+					});
+					var actWidth = jQuery("#click-tab-section").find(".active").parent("li").width();
+					var actPosition = jQuery("#click-tab-section li.active").position();
+					jQuery("#click-tab-section .slider-nav").css({"left":+ actPosition.left,"width": actWidth});
+
+					jQuery(function() {
+						jQuery('a[href*=\\#]:not([href=\\#])').click(function() {
+						if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') 
+					&& location.hostname == this.hostname) {					
+							var target = jQuery(this.hash);
+							target = target.length ? target : jQuery('[name=' + this.hash.slice(1) +']');
+							if (target.length) {
+							jQuery('html,body').animate({
+								scrollTop: target.offset().top - 185 //offsets for fixed header
+							}, 300);
+							return false;
+							}
+						}
+						});
+						//Executed on page load with URL containing an anchor tag.
+						if(jQuery(location.href.split("#")[1])) {
+							var target = jQuery('#'+location.href.split("#")[1]);
+							if (target.length) {
+							jQuery('html,body').animate({
+								scrollTop: target.offset().top - 185 //offset height of header here too.
+							},300 );
+							return false;
+							}
+						}
 					});
 				});
+				
 				</script>
 			</section>
 			<?php endif;  
