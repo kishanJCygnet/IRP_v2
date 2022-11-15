@@ -1159,7 +1159,7 @@
 								<h3><?php echo the_sub_field('tab_section_with_click_sub_title'); ?></h3>
 							<?php } ?>
 						</div>	
-						<?php if (have_rows('tab_section_with_click_content')) : ?>					
+						<?php if (have_rows('tab_section_with_click_content')) : ?>	
 								<ul class="nav nav-tabs" id="click-tab-section">
 								<?php $j = 0;
 									$tab_section_with_click_tab_title = '';
@@ -1171,7 +1171,7 @@
 									  </li>
 									<?php $j++;
 									endwhile; ?>
-								</ul>								
+								</ul>
 								<div class="tab-content">
 								<?php $x = 0;
 									$tab_section_with_click_tab_title = '';
@@ -1206,6 +1206,25 @@
 						jQuery("#click-tab-section li a.active").removeClass("active"); 
 						jQuery(this).addClass("active");
 					});
+					
+					var sectionIds = jQuery('#click-tab-section a');
+
+					  jQuery(document).scroll(function(){
+						  sectionIds.each(function(){
+							  var container = jQuery(this).attr('href');
+							  var containerOffset = jQuery(container).offset().top;
+							  var containerHeight = jQuery(container).outerHeight();
+							  var containerBottom = containerOffset + containerHeight;
+							  var scrollPosition = jQuery(document).scrollTop() + 180;
+					  
+							  if(scrollPosition < containerBottom - 20 && scrollPosition >= containerOffset - 20){
+								  jQuery(this).addClass('active');
+							  } else{
+								  jQuery(this).removeClass('active');
+							  }
+						  });
+					  });  
+					
 				});
 				</script>
 			</section>
