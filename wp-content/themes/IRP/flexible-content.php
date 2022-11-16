@@ -1214,32 +1214,29 @@
 					});
 					var actWidth = jQuery("#click-tab-section").find(".active").parent("li").width();
 					var actPosition = jQuery("#click-tab-section li.active").position();
-					jQuery("#click-tab-section .slider-nav").css({"left":+ actPosition.left,"width": actWidth});
-
-				
+					jQuery("#click-tab-section .slider-nav").css({"left":+ actPosition.left,"width": actWidth});				
 					
 					var sectionIds = jQuery('#click-tab-section li');
-					  jQuery(document).scroll(function(){
-						  sectionIds.each(function(){
-							  var container = jQuery(this).children('a').attr('href');
-							  var containerOffset = jQuery(container).offset().top;
-							  var containerHeight = jQuery(container).outerHeight();
-							  var containerBottom = containerOffset + containerHeight;
-							  var scrollPosition = jQuery(document).scrollTop() + 180;
-					  
-							  if(scrollPosition < containerBottom - 20 && scrollPosition >= containerOffset - 20){
-								  jQuery(this).addClass('active');
-								  var position = jQuery(this).position();
-								  var width = jQuery(this).width();
-									jQuery("#click-tab-section .slider-nav").css({"left":+ position.left,"width":width});
-							  } else{
-								  jQuery(this).removeClass('active');
-							  }
-						  });
-					  });  
+					jQuery(document).scroll(function(){
+					  sectionIds.each(function(){
+						  var container = jQuery(this).children('a').attr('href');
+						  var containerOffset = jQuery(container).offset().top;
+						  var containerHeight = jQuery(container).outerHeight();
+						  var containerBottom = containerOffset + containerHeight;
+						  var scrollPosition = jQuery(document).scrollTop() + 180;
+
+						  if(scrollPosition < containerBottom - 20 && scrollPosition >= containerOffset - 20){
+							  jQuery(this).addClass('active');
+							  var position = jQuery(this).position();
+							  var width = jQuery(this).width();
+								jQuery("#click-tab-section .slider-nav").css({"left":+ position.left,"width":width});
+						  } else{
+							  jQuery(this).removeClass('active');
+						  }
+					  });
+					});  
 					
-				});
-				
+				});				
 				</script>
 			</section>
 			<?php endif;  
