@@ -229,6 +229,9 @@
   
 .SE-Invoicing{
     background-color: #F8FDFF;
+    br{
+        display: none;
+    }
  .title-heading{
     text-align: center;
     margin-bottom: 40px;
@@ -249,6 +252,7 @@
     position: sticky;
     top: 76px;
     background-color:#F8FDFF;
+    z-index: 1;
     .slider-nav{
         display: inline-block;
         width: 25%;
@@ -323,5 +327,11 @@
             }
         }
     }
+ }
+ .actions{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 40px;
  }
 }

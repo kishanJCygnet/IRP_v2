@@ -56,7 +56,7 @@
                 position: absolute;
                 bottom: -28px;
                 right: -225px;
-                z-index: 999999;
+                
                 background-size: cover;
                 background-repeat: no-repeat;
             }
@@ -108,6 +108,29 @@
             font-weight: 500;
             margin-top: 50px;
         }    
+    }
+    &.eInvoicing-portal-banner{
+        .text-content{
+            h1{
+                font-size: 54px;
+            }
+            h3 {
+                font-size: 28px;
+            }
+            &::after{
+                -webkit-transform: scaleY(-1) rotate(9deg);
+                transform: scaleY(-1) rotate(9deg);
+                bottom: auto;
+                top: -51px;
+                right: -122px;
+            }
+        } 
+        ul{
+            li{
+                font-weight: 300;
+                font-size: 16px;
+            }
+        }
     }
     
    
@@ -171,6 +194,7 @@
         margin-bottom: 40px;
         font-weight: 100;
         font-size: 42px;
+        line-height: 1.3;
     }
     @include bp(lg-max) {
         background-position: 0px -50px;
