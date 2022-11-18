@@ -514,7 +514,8 @@
 				// Update total count in lists
 				var params = {
 					action: 'count_contacts_by_list',
-					list_id: selected_list_id
+					list_id: selected_list_id,
+					security: ig_es_js_data.security,
 				};
 
 				$.ajax({
@@ -743,17 +744,17 @@
 						jQuery(campaign_rules).each(function(index,elem){
 							var list_rule_option = jQuery(this).find('option[value = "_lists__in"]');
 							var list_rule_text   = jQuery(list_rule_option).text();
-							list_rule_text       = list_rule_text.replace(' [PRO]','');
+							list_rule_text       = list_rule_text.replace(' [MAX]','');
 							if ( 'undefined' !== typeof selected_elem ) {
 								if( disable_list_rule && ! ( jQuery(selected_elem)[0] === elem ) ) {
-									list_rule_text += ' [PRO]';
+									list_rule_text += ' [MAX]';
 									jQuery(list_rule_option).prop("selected", false).attr('disabled','disabled');
 								} else {
 									jQuery(list_rule_option).removeAttr('disabled');
 								}
 							} else {
 								if( index > 0 && disable_list_rule ) {
-									list_rule_text += ' [PRO]';
+									list_rule_text += ' [MAX]';
 									jQuery(list_rule_option).prop("selected", false).attr('disabled','disabled');
 								} else {
 									jQuery(list_rule_option).removeAttr('disabled');
@@ -851,7 +852,8 @@
 					list_id: selected_list_id,
 					conditions: conditions,
 					status: 'subscribed',
-					get_count: get_count
+					get_count: get_count,
+					security: ig_es_js_data.security
 				};
 
 				if ( 'undefined' !== typeof update_contacts_counts_xhr && 'undefined' !== typeof update_contacts_counts_xhr[campaign_id] ) {
@@ -3934,24 +3936,6 @@ function ig_es_is_valid_email( email ) {
 }
 
 window.ig_es_is_valid_json = ig_es_is_valid_json;
-
-function ig_es_add_dnd_rte_color_picker() {
-	window.esVisualEditor.RichTextEditor.add('fontcolor',{
-		icon: `<input type="color" id="ig-es-color-picker" value="#000000" style="cursor: pointer;"/>`,
-		event: 'change',
-		attributes: { title: 'Text color' },
-		// Bind the 'result' on 'change' listener
-		result: (rte, action) => {
-			rte.exec('forecolor',action.btn.firstChild.value);
-		},
-		// Reset the color
-		update: (rte, action) => {
-			action.btn.firstChild.value = "#000000";
-		}
-	});
-}
-
-window.ig_es_add_dnd_rte_color_picker = ig_es_add_dnd_rte_color_picker;
 
 function ig_es_add_dnd_rte_tags ( campaign_type ) {
 
