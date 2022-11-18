@@ -1879,7 +1879,7 @@ class ES_Common {
 			$pricing_page_url = admin_url( 'admin.php?page=es_pricing' );
 
 			$articles_upsell[] = array(
-				'title'       => __( '<b>Email Subscribers Secret Club</b>', 'email-subscribers' ),
+				'title'       => __( '<b>Icegram Express</b> (formerly known as <br/><b>Email Subscribers & Newsletters</b>) Secret Club', 'email-subscribers' ),
 				'link'        => 'https://www.facebook.com/groups/2298909487017349/',
 				'label'       => __( 'Join Now', 'email-subscribers' ),
 				'label_class' => 'bg-green-100 text-green-800',
@@ -1887,9 +1887,9 @@ class ES_Common {
 
 			if ( ! ES()->is_premium() ) {
 				$articles_upsell[] = array(
-					'title'       => __( 'Email Subscribers PRO', 'email-subscribers' ),
+					'title'       => __( 'Icegram Express (formerly known as Email Subscribers & Newsletters) MAX', 'email-subscribers' ),
 					'link'        => $pricing_page_url,
-					'label'       => __( 'PRO', 'email-subscribers' ),
+					'label'       => __( 'MAX', 'email-subscribers' ),
 					'label_class' => 'bg-green-100 text-green-800',
 				);
 			}
