@@ -386,7 +386,7 @@ class Share_Buttons {
 			wp_register_script(
 				"{$this->plugin->assets_prefix}-credentials",
 				$this->plugin->dir_url . 'js/set-credentials.js',
-				array(),
+				array( 'jquery', 'wp-util' ),
 				filemtime( "{$this->plugin->dir_path}js/set-credentials.js" ),
 				false
 			);

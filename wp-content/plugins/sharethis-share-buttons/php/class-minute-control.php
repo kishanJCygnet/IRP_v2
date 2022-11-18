@@ -502,7 +502,7 @@ class Minute_Control {
 	 * @param array    $categories The current block categories.
 	 * @param \WP_Post $post       Post object.
 	 *
-	 * @filter block_categories
+	 * @filter block_categories_all
 	 */
 	public function st_block_category( $categories, $post ) {
 		return array_merge(

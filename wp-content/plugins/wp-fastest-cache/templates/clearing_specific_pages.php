@@ -90,6 +90,8 @@
 					    	<label class="wiz-error-msg"></label>
 					    </div>
 
+					    <p class="wpfc-bottom-note" style="margin-bottom:-10px;"><a target="_blank" href="https://www.wpfastestcache.com/features/clear-cache-of-specific-urls-when-updating-or-posting/">Note: Please read this article to learn about this feature.</a></p>
+
 
 
 					</div>
