@@ -974,7 +974,10 @@ var ShareButtons = ( function( $, wp ) {
 		  config['show_total'] = true;
 		  config['labels'] = 'cta';
 		  config['min_count'] = 10;
-		  config['networks'] = undefined !== this.data.buttonConfig[ buttonCode ] && undefined === this.data.buttonConfig[ buttonCode ]['networks'] ? ['facebook', 'twitter', 'pinterest', 'email', 'sms', 'sharethis'] : this.data.buttonConfig[ buttonCode ]['networks'];
+      config['networks'] = undefined !== typeof this.data.buttonConfig[buttonCode] ||
+      undefined === typeof this.data.buttonConfig[buttonCode]['networks']
+        ? ['facebook', 'twitter', 'pinterest', 'email', 'sms', 'sharethis'] :
+        this.data.buttonConfig[buttonCode]['networks'];
 
 		  $.each( config['networks'], function( index, value ) {
 			$( '.' + buttonCode + '-network-list .share-button[data-network="' + value + '"]' ).attr( 'data-selected', 'true' );
