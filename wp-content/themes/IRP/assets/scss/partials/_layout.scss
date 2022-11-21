@@ -103,13 +103,13 @@ h3 {
 }
 
 input[type=submit]{
-  border: 1px solid #3cb4e7 !important;
+  border: 1px solid #80DBD1 !important;
   border-radius: 10px !important;
-  background-color: #3cb4e7 !important;
+  background-color: #80DBD1 !important;
   color: #fff !important;
   &:hover{
     background-color: #fff !important;
-    color: #19c5e3 !important;
+    color: #80DBD1 !important;
   }
 }
 .release-note-content,
@@ -1498,4 +1498,7 @@ p{
   .box-full{
     width: 100%;
   }
+}
+.light-sky-blue{
+ background-color: #f8fdff !important;
 }
