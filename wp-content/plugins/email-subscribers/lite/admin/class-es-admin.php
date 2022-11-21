@@ -463,7 +463,6 @@ if ( ! class_exists( 'ES_Admin' ) ) {
 																		ig_es_sync_dnd_editor_content('#campaign-dnd-editor-data');
 																	}
 																});
-																ig_es_add_dnd_rte_color_picker();
 															});
 														});
 													</script>
@@ -917,64 +916,58 @@ if ( ! class_exists( 'ES_Admin' ) ) {
 					$template_subject       = ! empty( $template_data['subject'] ) ? $template_data['subject'] : '';
 					$template_attachment_id = ! empty( $template_data['template_attachment_id'] ) ? $template_data['template_attachment_id'] : '';
 					$template_status        = 'save' === $template_action ? 'publish' : 'draft';
-		
-					if ( ! empty( $template_subject) ) {
-		
-						$data = array(
-							'post_title'   => $template_subject,
-							'post_content' => $template_body,
-							'post_type'    => 'es_template',
-							'post_status'  => $template_status,
-						);
 
-						$action = '';
-						if ( empty( $template_id ) ) {
-							$template_id = wp_insert_post( $data );
-							$action      = 'added';
-						} else {
-							$data['ID']  = $template_id;
-							$template_id = wp_update_post( $data );
-							$action      = 'updated';
-						}
-		
-						$is_template_added = ! ( $template_id instanceof WP_Error );
-		
-						if ( $is_template_added ) {
+					$data = array(
+						'post_title'   => $template_subject,
+						'post_content' => $template_body,
+						'post_type'    => 'es_template',
+						'post_status'  => $template_status,
+					);
 
-							if ( ! empty( $template_attachment_id ) ) {
-								set_post_thumbnail( $template_id, $template_attachment_id );
-							}
-		
-							$editor_type = ! empty( $template_data['meta']['es_editor_type'] ) ? $template_data['meta']['es_editor_type'] : '';
-		
-							$is_dnd_editor = IG_ES_DRAG_AND_DROP_EDITOR === $editor_type;
-		
-							if ( $is_dnd_editor ) {
-								$dnd_editor_data = array();
-								if ( ! empty( $template_data['meta']['es_dnd_editor_data'] ) ) {
-									$dnd_editor_data = $template_data['meta']['es_dnd_editor_data'];
-									$dnd_editor_data = json_decode( $dnd_editor_data );
-									update_post_meta( $template_id, 'es_dnd_editor_data', $dnd_editor_data );
-								}
-							} else {
-								$custom_css = ! empty( $template_data['meta']['es_custom_css'] ) ? $template_data['meta']['es_custom_css'] : '';
-								update_post_meta( $template_id, 'es_custom_css', $custom_css );
-							}
-		
-							update_post_meta( $template_id, 'es_editor_type', $editor_type );
-							update_post_meta( $template_id, 'es_template_type', $template_type );
-						}
-		
-						if ( ! empty( $template_id ) ) {
-							$template_url = admin_url( 'admin.php?page=es_template&id=' . $template_id . '&action=' . $action );
-							wp_safe_redirect( $template_url );
-							exit();
-						} else {
-							$message = __( 'An error has occured. Please try again later', 'email-subscribers' );	
-							ES_Common::show_message( $message, 'error' );
-						}
+					$action = '';
+					if ( empty( $template_id ) ) {
+						$template_id = wp_insert_post( $data );
+						$action      = 'added';
 					} else {
-						$message = __( 'Please add a subject.', 'email-subscribers' );	
+						$data['ID']  = $template_id;
+						$template_id = wp_update_post( $data );
+						$action      = 'updated';
+					}
+	
+					$is_template_added = ! ( $template_id instanceof WP_Error );
+	
+					if ( $is_template_added ) {
+
+						if ( ! empty( $template_attachment_id ) ) {
+							set_post_thumbnail( $template_id, $template_attachment_id );
+						}
+	
+						$editor_type = ! empty( $template_data['meta']['es_editor_type'] ) ? $template_data['meta']['es_editor_type'] : '';
+	
+						$is_dnd_editor = IG_ES_DRAG_AND_DROP_EDITOR === $editor_type;
+	
+						if ( $is_dnd_editor ) {
+							$dnd_editor_data = array();
+							if ( ! empty( $template_data['meta']['es_dnd_editor_data'] ) ) {
+								$dnd_editor_data = $template_data['meta']['es_dnd_editor_data'];
+								$dnd_editor_data = json_decode( $dnd_editor_data );
+								update_post_meta( $template_id, 'es_dnd_editor_data', $dnd_editor_data );
+							}
+						} else {
+							$custom_css = ! empty( $template_data['meta']['es_custom_css'] ) ? $template_data['meta']['es_custom_css'] : '';
+							update_post_meta( $template_id, 'es_custom_css', $custom_css );
+						}
+	
+						update_post_meta( $template_id, 'es_editor_type', $editor_type );
+						update_post_meta( $template_id, 'es_template_type', $template_type );
+					}
+	
+					if ( ! empty( $template_id ) ) {
+						$template_url = admin_url( 'admin.php?page=es_template&id=' . $template_id . '&action=' . $action );
+						wp_safe_redirect( $template_url );
+						exit();
+					} else {
+						$message = __( 'An error has occured. Please try again later', 'email-subscribers' );	
 						ES_Common::show_message( $message, 'error' );
 					}
 				}

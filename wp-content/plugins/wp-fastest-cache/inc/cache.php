@@ -244,18 +244,8 @@
 				}
 
 				// to exclude admin users
-				foreach ((array)$_COOKIE as $cookie_key => $cookie_value){
-					if(preg_match("/wordpress_logged_in/i", $cookie_key)){
-						$users_groups = get_users(array("role" => "administrator", "fields" => array("user_login")));
-						
-						foreach ($users_groups as $user_key => $user_value) {
-							if(preg_match("/^".preg_quote($user_value->user_login, "/")."/", $cookie_value)){
-								ob_start(array($this, "cdn_rewrite"));
-
-								return 0;
-							}
-						}
-					}
+				if($this->is_user_admin()){
+					return 0;
 				}
 
 				// to check comment author
@@ -452,6 +442,32 @@
 					}
 				}
 			}
+		}
+
+		public function is_user_admin(){
+			global $wpdb;
+
+			foreach ((array)$_COOKIE as $cookie_key => $cookie_value){
+				if(preg_match("/wordpress_logged_in/i", $cookie_key)){
+					$username = preg_replace("/^([^\|]+)\|.+/", "$1", $cookie_value);
+					break;
+				}
+			}
+
+			if(isset($username) && $username){			
+				$res = $wpdb->get_var("SELECT `$wpdb->users`.`ID`, `$wpdb->users`.`user_login`, `$wpdb->usermeta`.`meta_key`, `$wpdb->usermeta`.`meta_value` 
+									   FROM `$wpdb->users` 
+									   INNER JOIN `$wpdb->usermeta` 
+									   ON `$wpdb->users`.`user_login` = \"$username\" AND 
+									   `$wpdb->usermeta`.`meta_key` = \"wp_user_level\" AND 
+									   `$wpdb->usermeta`.`meta_value` = \"10\" AND 
+									   `$wpdb->users`.`ID` = `$wpdb->usermeta`.user_id ;"
+									);
+
+				return $res;
+			}
+
+			return false;
 		}
 
 		public function exclude_current_page($some = true){
@@ -697,6 +713,11 @@
 
 			// for Divi Theme
 			if(defined('DONOTCACHEPAGE') && (get_template() == "Divi")){
+				if(isset($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) == 'xmlhttprequest'){
+					// /?wc-ajax=dgwt_wcas_ajax_search&s=keyword&l=en
+					return $buffer;
+				}
+
 				return $buffer."<!-- DONOTCACHEPAGE is defined as TRUE -->";
 			}
 

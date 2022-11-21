@@ -5,9 +5,9 @@ Tags: social buttons, sharethis, share this, social sharing, share buttons, soci
 Author URI: https://sharethis.com/
 Author: ShareThis
 Requires at least: 5.5
-Tested up to: 6.0.3
-Stable tag: 2.1.5
-Version: 2.1.5
+Tested up to: 6.1.1
+Stable tag: 2.1.6
+Version: 2.1.6
 
 License: GPLv2 or later
 
@@ -72,6 +72,9 @@ Questions? Submit an inquiry through our support forum and our team will be happ
 We cache your ShareThis platform button configurations (social networks, button size, labels etc.) to optimize their performance. Sometimes changes you make on the ShareThis platform take a couple minutes to update on your site. Also, if you activate a new button type from the settings page you may experience a similar lag.
 
 == Changelog ==
+
+= 2.1.6 =
+* Test with WordPress 6.1.1.
 
 = 2.1.5 =
 * Add source.
