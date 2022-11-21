@@ -109,7 +109,8 @@
             margin-top: 50px;
         }    
     }
-    &.eInvoicing-portal-banner{
+    &.eInvoicing-portal-banner,
+    &.billing-tool-banner{
         .text-content{
             h1{
                 font-size: 54px;
@@ -118,11 +119,10 @@
                 font-size: 28px;
             }
             &::after{
-                -webkit-transform: scaleY(-1) rotate(9deg);
-                transform: scaleY(-1) rotate(9deg);
+                background-image: url('../../images/e-invoicing-portal-arrow.svg');                
                 bottom: auto;
-                top: -51px;
-                right: -122px;
+                top: -109px;
+                right: -173px;
             }
         } 
         ul{
@@ -131,8 +131,24 @@
                 font-size: 16px;
             }
         }
+    }    
+    &.billing-tool-banner{
+        .banner-inner-content{
+            .container{
+                & > .row{
+                    align-items: flex-end;
+                }
+            }
+            .text-content{
+                &::after{
+                    background-image: url('../../images/billing-tools-arrow.svg'); 
+                    height: 220px;
+                    top: -38px;
+                    right: -353px;
+                }
+            }
+        }
     }
-    
    
     .text-content {
         // position: relative;
