@@ -18,7 +18,7 @@
         }
     }
     .form-content {       
-        width: 900px;
+        width: 1200px;
         margin: auto;
         max-width: 100%;
     }
@@ -58,6 +58,13 @@
 }
 .contact-form-content {
     background-color: #F3FBFF;
+    .contact-form{
+        .container{
+            width: 1200px;
+            max-width: 100%;
+            margin: auto;
+        }
+    }
 }
 .wpcf7-not-valid-tip {
     position: absolute;
