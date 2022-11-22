@@ -1502,3 +1502,10 @@ p{
 .light-sky-blue{
  background-color: #f8fdff !important;
 }
+.wd-1200{
+  .container{
+    width: 1200px;
+    max-width: 100%;
+    margin: auto;
+  }
+}

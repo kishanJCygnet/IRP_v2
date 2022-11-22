@@ -149,6 +149,37 @@
             }
         }
     }
+    &.mobile-application-banner{
+        .banner-inner-content{
+            .text-content{
+                h1{
+                    font-size: 54px !important;
+                }
+                h3{
+                    font-size: 32px !important;
+                }
+                &::after{
+                    display: none;
+                }}
+                .img-content{ 
+                    img{
+                        width: 445px!important;
+                }
+            }
+        }
+        .mobile-app-download-btn{
+            display: flex;
+            position: absolute;
+            bottom: 120px;
+            right: -431px;
+            a{
+                margin-right: 20px;
+            }
+            img{
+                width: 180px;
+            }
+        }
+    }
    
     .text-content {
         // position: relative;
