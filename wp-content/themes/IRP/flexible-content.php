@@ -1242,6 +1242,44 @@
 			<?php endif;  
 			/* Tab Section With Click End */
 			
+			/* Benefits Round Section Start */
+			if (get_row_layout() == 'benefits_round_section') : ?>
+				<section class="benefits-class <?php echo the_sub_field('benefits_custom_class'); ?>">					
+					<div class="container">
+						<div class="bcirp-content">
+							<div class="bcirp-title"><?php echo the_sub_field('round_title'); ?></div>
+							<?php if (have_rows('benefits_details')) :
+								$con_cnt = 1; ?>
+									<?php while (have_rows('benefits_details')) : the_row(); ?>
+										<div class="bcirp-cn bcirp-cn-<?php echo $con_cnt; ?>">
+											<span>
+												<?php $extension = pathinfo(get_sub_field('benefits_icon'), PATHINFO_EXTENSION);
+													if($extension == 'svg'){
+														$benefits_icon = get_sub_field('benefits_icon');
+														$stream_opts = [
+															"ssl" => [
+																"verify_peer"=>false,
+																"verify_peer_name"=>false,
+															]
+														];														 
+														echo file_get_contents($benefits_icon, false, stream_context_create($stream_opts));
+													} else { ?>
+														<img src="<?php echo the_sub_field('benefits_icon'); ?>" alt="<?php echo the_sub_field('center_title'); ?>">
+												<?php } ?>
+											</span>
+											<?php if (get_sub_field('benefit_description')){ ?>
+												<?php echo the_sub_field('benefit_description'); ?>
+											<?php } ?>							
+										</div> 
+									<?php $con_cnt++; 
+									endwhile; ?>							
+							<?php endif; ?>
+						</div>
+					</div>					
+				</section>
+			<?php endif; 
+			/* Benefits Round Section End */	
+			
 		endwhile;
 	endif; 	
 	?>
