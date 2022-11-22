@@ -52,7 +52,7 @@
                 content: '';
                 background-image: url('../../images/banner-arrow.svg');
                 width: 379px;
-                height: 200px;
+                height: 245px;
                 position: absolute;
                 bottom: -28px;
                 right: -225px;
@@ -111,6 +111,9 @@
     }
     &.eInvoicing-portal-banner,
     &.billing-tool-banner{
+        .row{
+            align-items: flex-end;
+        }
         .text-content{
             h1{
                 font-size: 54px;
