@@ -901,8 +901,8 @@
             
 
             svg{
-                width: 40px;
-                height: 40px;
+                width: 30px;
+                height: 30px;
                 fill: #3cb3e7;
                 path{
                     fill: #3cb3e7;
@@ -1003,6 +1003,10 @@
                 svg{
                     width: 30px;
                     height: 30px;
+                    fill: #0F3764;
+                    path{
+                        fill: #0F3764;
+                    }
                 }
             }
            
@@ -1232,16 +1236,29 @@
     }
 }
 .non-filing-gstr{
+    .title-heading{
+        display: none
+    }
     .icon-box-list{
         width: calc(100% - 520px);
+        margin: auto;
         max-width: 100%;
         & > div{
             width: 100%  !important;
+            &:first-child{
+                position: relative;
+                left: -100px;
+            }
+            &:last-child{
+                position: relative;
+                left: 100px;
+            }
             .icon-box{
                 padding: 0;
                 text-align: center;
                 border-radius: 15px;
                 overflow: hidden;
+                box-shadow: 1px 1px 4px -1px #d1d0d0;
                 .icon-box-title-content{
                     margin-bottom: 0;
                     padding: 30px;
@@ -1257,6 +1274,10 @@
             }
           
         }
+    }
+    & + .CTA-btn{
+        margin-top: auto !important;
+        text-align: center !important;
     }
 }
 .box-with-icon{

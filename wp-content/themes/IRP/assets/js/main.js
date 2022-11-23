@@ -312,7 +312,11 @@ jQuery(document).ready(function(){
     // Set the height of all those children to whichever was highest 
     jQuery('.insights-card',this).height(highestBox);
                   
-  }); 
+  });
+  jQuery('svg').each(function(){
+    jQuery(this).find('g').removeAttr('clip-path');
+   });
+  
 
 });
 

@@ -276,35 +276,7 @@
 .half-banner {
     position: relative;
     overflow: hidden;
-    // &::after{
-    //     content: "";
-    //     height: 142px;
-    //     width: 193px;
-    //     background-image: url(../../images/banner-dot.svg)!important;
-    //     background-size: 100% 100%;
-    //     position: absolute;
-    //     z-index: 2;
-    //     right: -75px;
-    //     bottom: -28px;
-    // }
-    // &::before{
-    //     content: "";
-    //     height: 123px;
-    //     width: 150px;
-    //     background-image: url(../../images/banner-dots2.svg)!important;
-    //     background-size: 100% 100%;
-    //     position: absolute;
-    //     z-index: 2;
-    //     top: 82px;
-    //     left: -25px;
-    // }
     .banner-inner-content {
-        height: 50vh;
-        min-height: 300px;
-        // border-bottom-left-radius:100px ;
-        // @include bp(md-max){
-        //     border-bottom-left-radius:30px ;
-        // }
         @include bp(sm-max){
             height: auto;
             min-height: auto;
@@ -314,6 +286,8 @@
     .text-content {
         padding-left: 0;
         text-align: center;
+        padding-top: 50px;
+        padding-bottom: 90px;
         h1{
             text-align: center;
         }
@@ -323,6 +297,7 @@
     .col-lg-7 {
         width: 100% !important;
         justify-content: center;
+        align-items: center;
     }
     .align-items-center {
         justify-content: center;
