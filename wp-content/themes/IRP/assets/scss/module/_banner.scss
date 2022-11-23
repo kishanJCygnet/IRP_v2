@@ -135,6 +135,7 @@
             }
         }
     }    
+  
     &.billing-tool-banner{
         .banner-inner-content{
             .container{
@@ -148,6 +149,26 @@
                     height: 220px;
                     top: -38px;
                     right: -353px;
+                }
+            }
+        }
+    }
+    &.api-banner{
+        .banner-inner-content{
+            .text-content{
+                h1{
+                    font-size: 52px;
+                }
+                &::after{
+                    height: 220px;
+                    top: -114px;
+                    right: -39px;
+                    transform: rotate(-10deg);            
+                }
+            }
+            .img-content{
+                img{
+                    width: 100% !important;
                 }
             }
         }

@@ -1025,8 +1025,6 @@
  }
 }
 
-
-
 .benefits-CIRP{
     background-image: url('../../images/bg-circle.png');
     background-size: contain;
@@ -1040,56 +1038,59 @@
         padding: 100px;
         position: relative;
         margin: 80px auto;
-    
+        
         .bcirp-title{
-        background: #80DBD1;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-weight: bold;
-        /* padding: 0 50px; */
-        min-width: 200px;
-        min-height: 200px;
-        width: 200px;
-        height: 200px;
-        border-radius: 100%;
-        text-align: center;
-        font-size: 24px;
-        padding: 10px;
-        line-height: 1.2;
+            background: #80DBD1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            min-width: 200px;
+            min-height: 200px;
+            width: 200px;
+            height: 200px;
+            border-radius: 100%;
+            text-align: center;
+            font-size: 24px;
+            padding: 10px;
+            line-height: 1.2;
         }
         .bcirp-cn{
             font-size: 14px;
             text-align: center;
             position: absolute;
-            padding-top: 120px;
+            padding-top: 98px;
             line-height: 1.5;
-            width: 170px;
+            width: 250px;
             &.bcirp-cn-1{
-                left: 0;
-                top: 0;
+                left: -40px;
+                top: 110px;
             }
             &.bcirp-cn-2{
                 right: 70px;
                 top: -72px;            
             }
             &.bcirp-cn-3{
-                right: 45px;
-                bottom: 0;
+                right: 150px;
+                bottom: -79px;
             }
             &.bcirp-cn-4{
                 left: 103px;
                 bottom: -115px;
             }
-            &::after{
-                content: '';
+            & > span{
                 position: absolute;
-                width: 100px;
-                height: 100px;
-                border: 1px solid #3cb3e7;
+                width: 80px;
+                height: 80px;
+                border: 1px solid #80DBD1;
+                background-color: #F8FDFF;
+                box-shadow: 0px 15px 20px #00000014;
                 border-radius: 50%;
                 top: 0;
-                left: calc(50% - 50px);
+                display: flex;
+                left: calc(50% - 40px);
+                align-items: center;
+                justify-content: center;
             }
         }
     }
@@ -1112,6 +1113,25 @@
         }
         
     }
+    &.benefits-e-invoice{
+        .bcirp-content{
+            .bcirp-cn{
+             
+                &.bcirp-cn-1{
+                    left: -7px;
+                    top: -5px;
+                }
+                &.bcirp-cn-3{
+                    right: 0px;
+                    bottom: -79px;
+                }
+                &.bcirp-cn-4{
+                left: 103px;
+                bottom: -45px;
+            }
+            }
+        }
+    }
 }
 .seamlessly-cygnetIRP{
     .icon-box-title-content{
@@ -1120,6 +1140,7 @@
     .icon-box-list{
         
         & > div{
+
             .icon-box{
                 .icon{
                     background: transparent linear-gradient(90deg, #80DBD1 0%, #0F3764 100%) 0% 0% no-repeat padding-box;
@@ -1143,6 +1164,12 @@
                 &::after{
                     background-image: url(../../images/arrow-down.svg);                        
                 }
+            }
+            &:last-child{
+                .icon-box{
+                    &::after{
+                        display: none !important;
+                    }}
             }
         }        
         & > div:last-child{
@@ -1229,6 +1256,53 @@
                 }
             }
           
+        }
+    }
+}
+.box-with-icon{
+    .icon-box-list{        
+        .icon-box {
+            text-align: center;
+            background-color: #0F3764;
+            padding: 30px;
+            .icon-box-title-content{
+                h3{
+                   color:#80DBD1;
+                }
+            }
+            .icon{
+                position: static !important;
+                margin: auto;
+                margin-bottom: 30px;
+                svg, path{
+                    fill: #fff;
+                }
+            }
+            .description {
+                color: #fff;
+            }
+        }
+    }
+}
+.leverage-APIs-section{
+    .icon-box-list{     
+        & > div{
+            width: 100%;
+        }   
+        .icon-box{
+            padding: 0;
+            background-color: transparent;
+            .icon{
+                    border: 0;
+                    border-radius: 0;
+                    width: auto;
+                    height: auto;
+                    position: static!important;
+                    background-color: transparent;
+                    box-shadow: none;
+                   max-width: 550px;
+                   margin: auto;
+            }
         }
     }
 }
