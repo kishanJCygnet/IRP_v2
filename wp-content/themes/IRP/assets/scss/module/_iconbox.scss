@@ -1306,3 +1306,19 @@
         }
     }
 }
+.et-home{
+    .icon-box-list{
+        & > div{
+            width: 33.33%;
+            .icon-box{
+                padding: 20px;
+                text-align: center;
+                .icon{
+                    position: static !important; 
+                    margin: auto;
+                    margin-bottom: 20px;
+                }
+            }
+        }
+    }
+}
