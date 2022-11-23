@@ -232,7 +232,7 @@ function bodhi_svgs_sanitize_svg( $file ){
 
 			$should_sanitize_svg = array();
 			
-			$sanitize_on_upload_roles_array = $bodhi_svgs_options['sanitize_on_upload_roles'];
+			$sanitize_on_upload_roles_array = (array) $bodhi_svgs_options['sanitize_on_upload_roles'];
 			
 			$user = wp_get_current_user();
 		 
