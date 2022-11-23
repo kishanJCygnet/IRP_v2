@@ -60,11 +60,11 @@ function bodhi_sanitize_fields( $value ) {
     }
 
     if( !isset($value['sanitize_on_upload_roles']) ) {
-        $value['sanitize_on_upload_roles'] = "none";
+        $value['sanitize_on_upload_roles'] = array("none");
     }
 
     if( !isset($value['restrict']) ) {
-        $value['restrict'] = "none";
+        $value['restrict'] = array("none");
     }
 
 	$value['css_target'] = esc_attr( sanitize_text_field( $value['css_target'] ) );
