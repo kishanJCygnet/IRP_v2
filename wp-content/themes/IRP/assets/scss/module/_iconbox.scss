@@ -871,10 +871,10 @@
         // &:hover{
         //     box-shadow: 0px 0px 30px 0px #cbcaca;
         // }
-        @include bp(lg-max){
-            padding: 15px;
-            padding-bottom: 54px;
-        }
+        // @include bp(lg-max){
+        //     padding: 15px;
+        //     padding-bottom: 54px;
+        // }
         .icon-box-title-content{
             margin-bottom: 15px;
             h3{
@@ -952,6 +952,7 @@
     }
    }
    .icon-box-list{
+    padding-left: 40px;
     & > div{
         width: 100%;
     }
@@ -967,20 +968,27 @@
     background-color: #f8fdff;
     .container{
         display: flex;
-        width: 1200px;
-        margin: auto;
-        max-width: 100%;
+      
         .title-heading{
           width: 400px;
+          @include bp(lg-max){
+            width: 300px;
+          }
         }
     }
     .icon-box-list{
         width: calc(100% - 350px);
         margin-left: auto;
         padding-left: 30px;
+        @include bp(lg-max){
+            width: calc(100% - 300px);
+        }
         & > div{
             margin: 10px 20px;
             width: 44%;
+            @include bp(xl-max){
+                width: 42%;
+            }
         }
         .icon-box{
             background-color: #fff;
@@ -990,6 +998,7 @@
             padding-left: 50px;
             display: flex;
             align-items: center;
+            box-shadow: 0 0 6px 0 #e4e4e4;
             .icon{
                 margin: 0;
                 border: 1px solid;
@@ -1015,10 +1024,6 @@
     & + .CTA-btn{
         text-align: left !important;
         margin-top: -80px !important;
-        .container{
-            width: 1200px;
-            max-width: 1200px;
-        }
     }
 }
 .stremline-accessibilities{
@@ -1331,6 +1336,12 @@
     .icon-box-list{
         & > div{
             width: 33.33%;
+            @include bp(sm-max){
+                width: 50%;  
+            }
+            @include bp(xs-max){
+                width: 100%;  
+            }
             .icon-box{
                 padding: 20px;
                 text-align: center;

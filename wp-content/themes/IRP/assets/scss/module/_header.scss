@@ -326,12 +326,10 @@ header {
             top: 0;
             left: 0;
             width: 100%;
-            background-color: #ffffffeb;
+            background-color: rgb(13 50 95 / 89%);
             border-bottom: 1px solid #ececec;
             z-index: 99;
-            @include bp(lg-max){
-                background-color: #ffffffeb;
-            }
+           
         }
         .navbar-nav {
             .nav-link {
@@ -390,14 +388,12 @@ header {
             img {
                 width: 220px;
                 // margin-bottom: 10px;
-                @include bp(xl-max) {
-                    width: 210px; 
-                    }
+               
                 // @include bp(lg-max) {
                 // width: 160px; 
                 // }
                 @include bp(xs-max) {
-                width: 105px; 
+                width: 180px; 
                 }
             }
         }
@@ -936,8 +932,8 @@ header {
             box-shadow: none;
         }
         .navbar-toggler-icon {
-            background-color: #052d55;
-            height: 2.5px;
+            background-color: #80dbd1;
+            height: 2px;
             border-radius: 6px;
             position: relative;
             margin-top: -5px;
@@ -945,7 +941,7 @@ header {
             &:before {
                 content: "";
                 height: 2px;
-                background-color: #052d55;
+                background-color: #80dbd1;
                 left: 0;
                 right: 0;
                 top: -8px;
