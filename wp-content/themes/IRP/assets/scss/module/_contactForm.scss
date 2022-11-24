@@ -63,6 +63,9 @@
             width: 1200px;
             max-width: 100%;
             margin: auto;
+            @include bp(xl-max){
+                width: 1024px;
+            }
         }
     }
 }
@@ -70,7 +73,7 @@
     position: absolute;
     left: 27px;
     right: 0;
-    width: 100%;
+    width: 95%;
     display: inline-block;
     bottom: 11px;
     font-size: 13px !important;
@@ -164,7 +167,10 @@ option {
                 margin-bottom: 0;
                 .contact-form-content &{
                     @include bp(sm-max){
-                      margin-top: 0;
+                      margin-top: 30px;
+                    }
+                    @include bp(xs-max){
+                      margin-top: 0px;
                     }
                 }
             }
@@ -178,7 +184,7 @@ option {
             right: 0;
             width: 100%;
             display: inline-block;
-            bottom: -13px;
+            bottom: -22px;
 
             @include bp(lg-max) {
                 left: 0 !important;

@@ -239,6 +239,9 @@
     h2{
         border-left: 0;
         margin-bottom: 30px;
+        @include bp(xs-max){
+            margin-bottom: 10px;
+        }
     }
     h3{
         font-weight: 500;
@@ -248,12 +251,16 @@
  .nav-tabs{
     justify-content: center;
     width: 1000px;
+    max-width: 100%;
     margin: auto;
     border-bottom: 2px solid #C1EDFF;
     position: sticky;
     top: 76px;
     background-color:#F8FDFF;
-    z-index: 1;
+    z-index: 4;
+    @include bp(sm-max){
+        top: 69px;
+    }
     .slider-nav{
         display: inline-block;
         width: 25%;
@@ -295,7 +302,17 @@
             color: #2B2B2B;
             border: 0;
             margin-bottom: 0;
-           
+            @include bp(md-max){
+                font-size: 16px;
+            }           
+            @include bp(sm-max){
+                font-size: 13px;
+                padding-left: 5px;
+                padding-right: 5px;
+            }    
+            @include bp(xs-max){
+                font-size: 12px;
+            }       
             &:hover{
                 border: 0;
             }
@@ -305,17 +322,38 @@
 
  .tab-inner-content{
     width: 1000px;
+    max-width: 100%;
     margin: 80px auto;
+    @include bp(sm-max){
+        margin: 0px auto;
+        padding: 30px 0;
+        border-bottom: 1px solid #ebe8e8;
+        &:last-child{
+            border-bottom: 0;
+        }
+    }
 
     .in-content{
         display: flex;
         align-items: center;
+        @include bp(md-max){
+           flex-wrap: wrap; 
+        }
         .col-img{
             width: 45%;
+            @include bp(md-max){
+                width: 100%;
+                margin-bottom: 30px;
+             }
         }
         .col-text{
             width: 55%;
             padding-left: 50px;
+            @include bp(md-max){
+                width: 100%;
+                padding-left: 0;
+                padding-right: 0 !important;
+             }
            
         }
     }
