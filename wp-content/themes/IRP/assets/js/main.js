@@ -316,7 +316,7 @@ jQuery(document).ready(function(){
   jQuery('svg').each(function(){
     jQuery(this).find('g').removeAttr('clip-path');
    });
-  
 
+  
 });
 
