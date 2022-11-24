@@ -153,7 +153,15 @@ option {
                 @include bp(sm-max){
                 bottom: 4px;
                 }
-             }
+              }
+            }
+            .wpcf7-form-control-wrap{
+                @include bp(sm-max){
+                    height: 54px;
+                }
+                @include bp(xs-max){
+                    height: 72px;
+                }
             }
         }
         &.whatup-check {
@@ -170,7 +178,7 @@ option {
                       margin-top: 30px;
                     }
                     @include bp(xs-max){
-                      margin-top: 0px;
+                      margin-top: 20px;
                     }
                 }
             }
@@ -191,7 +199,10 @@ option {
                 padding-left: 10px;
             }
             @include bp(md-max) {
-                bottom: -28px;
+                bottom: -12px;
+            }
+            @include bp(sm-max) {
+                bottom: -18px;
             }
         }
         .form-check-input {
