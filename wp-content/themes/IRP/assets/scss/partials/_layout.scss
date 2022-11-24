@@ -225,6 +225,7 @@ a:active {
       @include bp(sm-max){
         font-size:24px !important;
         padding-bottom: 10px;
+        margin-bottom: 0;
        }
       @include bp(xs-max){
         font-size:20px !important;
@@ -1018,8 +1019,8 @@ video{
   margin-top: 0 !important;
 }
 .submit-button  .wpcf7-spinner{
-  left: 0;
-  top: 0;
+  left: calc(50% - 3px);
+  top: calc(50% - 3px);
   width: auto;
   height: auto;
   right: 0;
@@ -1385,7 +1386,7 @@ ul.more-list-detail{
   }
   .not-found-page{
     padding-top: 40px;
-    padding-bottom: 0;
+    padding-bottom: 40px;
   }
   .footer {
 
