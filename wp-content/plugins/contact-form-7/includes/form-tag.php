@@ -3,7 +3,7 @@
 /**
  * A form-tag.
  *
- * @link https://contactform7.com/tag-syntax/#form_tag
+ * @see https://contactform7.com/tag-syntax/#form_tag
  */
 class WPCF7_FormTag implements ArrayAccess {
 
@@ -511,9 +511,8 @@ class WPCF7_FormTag implements ArrayAccess {
 	/**
 	 * Assigns a value to the specified offset.
 	 *
-	 * @link https://www.php.net/manual/en/arrayaccess.offsetset.php
+	 * @see https://www.php.net/manual/en/arrayaccess.offsetset.php
 	 */
-	#[ReturnTypeWillChange]
 	public function offsetSet( $offset, $value ) {
 		if ( property_exists( __CLASS__, $offset ) ) {
 			$this->{$offset} = $value;
@@ -524,9 +523,8 @@ class WPCF7_FormTag implements ArrayAccess {
 	/**
 	 * Returns the value at specified offset.
 	 *
-	 * @link https://www.php.net/manual/en/arrayaccess.offsetget.php
+	 * @see https://www.php.net/manual/en/arrayaccess.offsetget.php
 	 */
-	#[ReturnTypeWillChange]
 	public function offsetGet( $offset ) {
 		if ( property_exists( __CLASS__, $offset ) ) {
 			return $this->{$offset};
@@ -539,9 +537,8 @@ class WPCF7_FormTag implements ArrayAccess {
 	/**
 	 * Returns true if the specified offset exists.
 	 *
-	 * @link https://www.php.net/manual/en/arrayaccess.offsetexists.php
+	 * @see https://www.php.net/manual/en/arrayaccess.offsetexists.php
 	 */
-	#[ReturnTypeWillChange]
 	public function offsetExists( $offset ) {
 		return property_exists( __CLASS__, $offset );
 	}
@@ -550,9 +547,8 @@ class WPCF7_FormTag implements ArrayAccess {
 	/**
 	 * Unsets an offset.
 	 *
-	 * @link https://www.php.net/manual/en/arrayaccess.offsetunset.php
+	 * @see https://www.php.net/manual/en/arrayaccess.offsetunset.php
 	 */
-	#[ReturnTypeWillChange]
 	public function offsetUnset( $offset ) {
 	}
 

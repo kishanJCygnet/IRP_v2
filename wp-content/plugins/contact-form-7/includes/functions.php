@@ -462,7 +462,7 @@ function wpcf7_rmdir_p( $dir ) {
 /**
  * Builds a URL-encoded query string.
  *
- * @link https://developer.wordpress.org/reference/functions/_http_build_query/
+ * @see https://developer.wordpress.org/reference/functions/_http_build_query/
  *
  * @param array $args URL query parameters.
  * @param string $key Optional. If specified, used to prefix key name.
@@ -499,7 +499,7 @@ function wpcf7_build_query( $args, $key = '' ) {
 /**
  * Returns the number of code units in a string.
  *
- * @link http://www.w3.org/TR/html5/infrastructure.html#code-unit-length
+ * @see http://www.w3.org/TR/html5/infrastructure.html#code-unit-length
  *
  * @param string $text Input string.
  * @return int|bool The number of code units, or false if
