@@ -1,26 +1,9 @@
 <?php
-/**
- * Contact form helper functions
- */
 
-
-/**
- * Wrapper function of WPCF7_ContactForm::get_instance().
- *
- * @param int|WP_Post $post Post ID or post object.
- * @return WPCF7_ContactForm Contact form object.
- */
-function wpcf7_contact_form( $post ) {
-	return WPCF7_ContactForm::get_instance( $post );
+function wpcf7_contact_form( $id ) {
+	return WPCF7_ContactForm::get_instance( $id );
 }
 
-
-/**
- * Searches for a contact form by an old unit ID.
- *
- * @param int $old_id Old unit ID.
- * @return WPCF7_ContactForm Contact form object.
- */
 function wpcf7_get_contact_form_by_old_id( $old_id ) {
 	global $wpdb;
 
@@ -32,13 +15,6 @@ function wpcf7_get_contact_form_by_old_id( $old_id ) {
 	}
 }
 
-
-/**
- * Searches for a contact form by title.
- *
- * @param string $title Title of contact form.
- * @return WPCF7_ContactForm|null Contact form object if found, null otherwise.
- */
 function wpcf7_get_contact_form_by_title( $title ) {
 	$page = get_page_by_title( $title, OBJECT, WPCF7_ContactForm::post_type );
 
@@ -49,22 +25,12 @@ function wpcf7_get_contact_form_by_title( $title ) {
 	return null;
 }
 
-
-/**
- * Wrapper function of WPCF7_ContactForm::get_current().
- *
- * @return WPCF7_ContactForm Contact form object.
- */
 function wpcf7_get_current_contact_form() {
 	if ( $current = WPCF7_ContactForm::get_current() ) {
 		return $current;
 	}
 }
 
-
-/**
- * Returns true if it is in the state that a non-Ajax submission is accepted.
- */
 function wpcf7_is_posted() {
 	if ( ! $contact_form = wpcf7_get_current_contact_form() ) {
 		return false;
@@ -73,14 +39,6 @@ function wpcf7_is_posted() {
 	return $contact_form->is_posted();
 }
 
-
-/**
- * Retrieves the user input value through a non-Ajax submission.
- *
- * @param string $name Name of form control.
- * @param string $default_value Optional default value.
- * @return string The user input value through the form-control.
- */
 function wpcf7_get_hangover( $name, $default_value = null ) {
 	if ( ! wpcf7_is_posted() ) {
 		return $default_value;
@@ -96,13 +54,6 @@ function wpcf7_get_hangover( $name, $default_value = null ) {
 	return isset( $_POST[$name] ) ? wp_unslash( $_POST[$name] ) : $default_value;
 }
 
-
-/**
- * Retrieves an HTML snippet of validation error on the given form control.
- *
- * @param string $name Name of form control.
- * @return string Validation error message in a form of HTML snippet.
- */
 function wpcf7_get_validation_error( $name ) {
 	if ( ! $contact_form = wpcf7_get_current_contact_form() ) {
 		return '';
@@ -111,38 +62,18 @@ function wpcf7_get_validation_error( $name ) {
 	return $contact_form->validation_error( $name );
 }
 
+function wpcf7_get_validation_error_reference( $name ) {
+	$contact_form = wpcf7_get_current_contact_form();
 
-/**
- * Returns a reference key to a validation error message.
- *
- * @param string $name Name of form control.
- * @param string $unit_tag Optional. Unit tag of the contact form.
- * @return string Reference key code.
- */
-function wpcf7_get_validation_error_reference( $name, $unit_tag = '' ) {
-	if ( '' === $unit_tag ) {
-		$contact_form = wpcf7_get_current_contact_form();
-
-		if ( $contact_form and $contact_form->validation_error( $name ) ) {
-			$unit_tag = $contact_form->unit_tag();
-		} else {
-			return null;
-		}
-	}
-
-	return preg_replace( '/[^0-9a-z_-]+/i', '',
-		sprintf(
+	if ( $contact_form and $contact_form->validation_error( $name ) ) {
+		return sprintf(
 			'%1$s-ve-%2$s',
-			$unit_tag,
+			$contact_form->unit_tag(),
 			$name
-		)
-	);
+		);
+	}
 }
 
-
-/**
- * Retrieves a message for the given status.
- */
 function wpcf7_get_message( $status ) {
 	if ( ! $contact_form = wpcf7_get_current_contact_form() ) {
 		return '';
@@ -151,14 +82,6 @@ function wpcf7_get_message( $status ) {
 	return $contact_form->message( $status );
 }
 
-
-/**
- * Returns a class names list for a form-tag of the specified type.
- *
- * @param string $type Form-tag type.
- * @param string $default_classes Optional default classes.
- * @return string Whitespace-separated list of class names.
- */
 function wpcf7_form_controls_class( $type, $default_classes = '' ) {
 	$type = trim( $type );
 	$default_classes = array_filter( explode( ' ', $default_classes ) );
@@ -179,10 +102,6 @@ function wpcf7_form_controls_class( $type, $default_classes = '' ) {
 	return implode( ' ', $classes );
 }
 
-
-/**
- * Callback function for the contact-form-7 shortcode.
- */
 function wpcf7_contact_form_tag_func( $atts, $content = null, $code = '' ) {
 	if ( is_feed() ) {
 		return '[contact-form-7]';
@@ -227,10 +146,6 @@ function wpcf7_contact_form_tag_func( $atts, $content = null, $code = '' ) {
 	return $contact_form->form_html( $atts );
 }
 
-
-/**
- * Saves the contact form data.
- */
 function wpcf7_save_contact_form( $args = '', $context = 'save' ) {
 	$args = wp_parse_args( $args, array(
 		'id' => -1,
@@ -301,10 +216,6 @@ function wpcf7_save_contact_form( $args = '', $context = 'save' ) {
 	return $contact_form;
 }
 
-
-/**
- * Sanitizes the form property data.
- */
 function wpcf7_sanitize_form( $input, $default_template = '' ) {
 	if ( null === $input ) {
 		return $default_template;
@@ -319,10 +230,6 @@ function wpcf7_sanitize_form( $input, $default_template = '' ) {
 	return $output;
 }
 
-
-/**
- * Sanitizes the mail property data.
- */
 function wpcf7_sanitize_mail( $input, $defaults = array() ) {
 	$input = wp_parse_args( $input, array(
 		'active' => false,
@@ -370,10 +277,6 @@ function wpcf7_sanitize_mail( $input, $defaults = array() ) {
 	return $output;
 }
 
-
-/**
- * Sanitizes the messages property data.
- */
 function wpcf7_sanitize_messages( $input, $defaults = array() ) {
 	$output = array();
 
@@ -388,10 +291,6 @@ function wpcf7_sanitize_messages( $input, $defaults = array() ) {
 	return $output;
 }
 
-
-/**
- * Sanitizes the additional settings property data.
- */
 function wpcf7_sanitize_additional_settings( $input, $default_template = '' ) {
 	if ( null === $input ) {
 		return $default_template;

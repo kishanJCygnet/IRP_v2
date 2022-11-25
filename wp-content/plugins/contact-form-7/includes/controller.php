@@ -43,7 +43,9 @@ add_action(
 
 		$assets = wp_parse_args( $assets, array(
 			'src' => wpcf7_plugin_url( 'includes/js/index.js' ),
-			'dependencies' => array(),
+			'dependencies' => array(
+				'wp-polyfill',
+			),
 			'version' => WPCF7_VERSION,
 			'in_footer' => ( 'header' !== wpcf7_load_js() ),
 		) );
@@ -51,10 +53,7 @@ add_action(
 		wp_register_script(
 			'contact-form-7',
 			$assets['src'],
-			array_merge(
-				$assets['dependencies'],
-				array( 'swv' )
-			),
+			$assets['dependencies'],
 			$assets['version'],
 			$assets['in_footer']
 		);

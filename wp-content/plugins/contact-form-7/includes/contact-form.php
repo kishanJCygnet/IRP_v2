@@ -775,20 +775,19 @@ class WPCF7_ContactForm {
 						);
 					}
 
-					$validation_error_id = wpcf7_get_validation_error_reference(
-						$name,
-						$this->unit_tag()
+					$validation_error_id = sprintf(
+						'%1$s-ve-%2$s',
+						$this->unit_tag(),
+						$name
 					);
 
-					if ( $validation_error_id ) {
-						$list_item = sprintf(
-							'<li id="%1$s">%2$s</li>',
-							esc_attr( $validation_error_id ),
-							$list_item
-						);
+					$list_item = sprintf(
+						'<li id="%1$s">%2$s</li>',
+						$validation_error_id,
+						$list_item
+					);
 
-						$validation_errors[] = $list_item;
-					}
+					$validation_errors[] = $list_item;
 				}
 			}
 		}
